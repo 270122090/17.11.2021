@@ -113,21 +113,9 @@ void MainWindow::update_a_member()
 
                 }
 
-            QFile memberFile("members.txt");
-            memberFile.open(QIODevice::WriteOnly| QIODevice::Text);
-            QTextStream out(&memberFile);
-            for(int i=0;i<memberList.size();i++)
-            {
-                out << memberList.at(i)->getMemberName()<<",";
-                out << memberList.at(i)->getPhoneNumber()<<",";
-                out << memberList.at(i)->getEmail()<<",";
-                out << memberList.at(i)->getBook1()<<",";
-                out << memberList.at(i)->getBook2()<<",";
-                out << memberList.at(i)->getBook3()<< Qt::endl;
 
-            }
-                out.flush();
-                memberFile.close();
+
+
         }
 }
 
