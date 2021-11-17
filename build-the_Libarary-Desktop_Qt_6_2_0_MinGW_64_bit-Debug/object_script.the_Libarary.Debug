@@ -5,9 +5,11 @@ debug/allmembers.o
 debug/login.o
 debug/main.o
 debug/mainwindow.o
+debug/updatebook.o
 debug/updatemember.o
 debug/moc_addbook.o
 debug/moc_addmember.o
 debug/moc_login.o
 debug/moc_mainwindow.o
+debug/moc_updatebook.o
 debug/moc_updatemember.o

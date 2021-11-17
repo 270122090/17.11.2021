@@ -1286,6 +1286,19 @@ border-radius: 16px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <widget class="QListWidget" name="listBooks">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>90</y>
+         <width>431</width>
+         <height>491</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(95, 95, 112);</string>
+       </property>
+      </widget>
       <widget class="QPushButton" name="btnSearchBook">
        <property name="geometry">
         <rect>
@@ -1344,19 +1357,6 @@ border: 1px solid rgb(41, 170, 182);}
         <string>SEARCH</string>
        </property>
       </widget>
-      <widget class="QListWidget" name="listBooks">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>90</y>
-         <width>431</width>
-         <height>491</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(95, 95, 112);</string>
-       </property>
-      </widget>
       <widget class="QLineEdit" name="txtSearchBook">
        <property name="geometry">
         <rect>
@@ -1397,9 +1397,6 @@ background-color:rgb(43,45,56);
         <bool>true</bool>
        </property>
       </widget>
-      <zorder>txtSearchBook</zorder>
-      <zorder>btnSearchBook</zorder>
-      <zorder>listBooks</zorder>
      </widget>
      <widget class="QLabel" name="label_17">
       <property name="geometry">

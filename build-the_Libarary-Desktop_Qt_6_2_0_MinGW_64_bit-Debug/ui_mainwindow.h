@@ -80,8 +80,8 @@ public:
     QFrame *addBookTabFrame_3;
     QLabel *addBookTtle_3;
     QFrame *frame_7;
-    QPushButton *btnSearchBook;
     QListWidget *listBooks;
+    QPushButton *btnSearchBook;
     QLineEdit *txtSearchBook;
     QLabel *label_17;
     QLabel *lbl_ID;
@@ -757,6 +757,10 @@ public:
 "border-radius: 16px;"));
         frame_7->setFrameShape(QFrame::StyledPanel);
         frame_7->setFrameShadow(QFrame::Raised);
+        listBooks = new QListWidget(frame_7);
+        listBooks->setObjectName(QString::fromUtf8("listBooks"));
+        listBooks->setGeometry(QRect(30, 90, 431, 491));
+        listBooks->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);"));
         btnSearchBook = new QPushButton(frame_7);
         btnSearchBook->setObjectName(QString::fromUtf8("btnSearchBook"));
         btnSearchBook->setGeometry(QRect(360, 30, 101, 31));
@@ -800,10 +804,6 @@ public:
                         "a(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));\n"
 "border: 1px solid rgb(41, 170, 182);}\n"
 ""));
-        listBooks = new QListWidget(frame_7);
-        listBooks->setObjectName(QString::fromUtf8("listBooks"));
-        listBooks->setGeometry(QRect(40, 90, 431, 491));
-        listBooks->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);"));
         txtSearchBook = new QLineEdit(frame_7);
         txtSearchBook->setObjectName(QString::fromUtf8("txtSearchBook"));
         txtSearchBook->setGeometry(QRect(30, 30, 321, 31));
@@ -828,9 +828,6 @@ public:
 "}"));
         txtSearchBook->setFrame(false);
         txtSearchBook->setClearButtonEnabled(true);
-        txtSearchBook->raise();
-        btnSearchBook->raise();
-        listBooks->raise();
         label_17 = new QLabel(Books);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(569, 316, 51, 36));

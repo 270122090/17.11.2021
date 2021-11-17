@@ -16,6 +16,7 @@ SOURCES += \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
+    updatebook.cpp \
     updatemember.cpp
 
 HEADERS += \
@@ -25,6 +26,7 @@ HEADERS += \
     allmembers.h \
     login.h \
     mainwindow.h \
+    updatebook.h \
     updatemember.h
 
 FORMS += \
@@ -32,6 +34,7 @@ FORMS += \
     addmember.ui \
     login.ui \
     mainwindow.ui \
+    updatebook.ui \
     updatemember.ui
 
 # Default rules for deployment.
