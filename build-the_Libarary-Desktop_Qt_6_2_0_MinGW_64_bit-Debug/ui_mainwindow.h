@@ -116,8 +116,6 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *btnAddMember;
     QPushButton *btnEditMember;
-    QLineEdit *txtSearchMember;
-    QPushButton *btnSearchMember;
     QWidget *layoutWidget_9;
     QGridLayout *gridLayout_5;
     QLabel *lblMemberNumber;
@@ -137,6 +135,8 @@ public:
     QLabel *lblBookTitle_11;
     QLabel *lblMemberBook1;
     QLabel *label_26;
+    QLineEdit *txtSearchMember;
+    QPushButton *btnSearchMember;
     QWidget *tab_3;
     QLabel *LibrarianAdminHeading_2;
     QFrame *line;
@@ -182,7 +182,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 10, 1001, 611));
+        tabWidget->setGeometry(QRect(10, -10, 1001, 611));
         tabWidget->setStyleSheet(QString::fromUtf8(""));
         tabWidget->setTabPosition(QTabWidget::North);
         tabWidget->setTabShape(QTabWidget::Rounded);
@@ -671,57 +671,6 @@ public:
 
         horizontalLayout_2->addWidget(btnEditMember);
 
-        txtSearchMember = new QLineEdit(layoutWidget_8);
-        txtSearchMember->setObjectName(QString::fromUtf8("txtSearchMember"));
-        txtSearchMember->setStyleSheet(QString::fromUtf8("border: bold"));
-        txtSearchMember->setFrame(false);
-        txtSearchMember->setClearButtonEnabled(true);
-
-        horizontalLayout_2->addWidget(txtSearchMember);
-
-        btnSearchMember = new QPushButton(layoutWidget_8);
-        btnSearchMember->setObjectName(QString::fromUtf8("btnSearchMember"));
-        btnSearchMember->setStyleSheet(QString::fromUtf8("/*background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(54, 110, 140, 255), stop:0.747191 rgba(145, 192, 216, 255));\n"
-"\n"
-"border-color: rgb(81, 130, 157);\n"
-"font: 8pt \"Nirmala UI\";\n"
-"color: rgb(0, 0, 0);\n"
-"border-radius: 10px;*/\n"
-"\n"
-"/*-----QPushButton-----*/\n"
-"QPushButton\n"
-"{\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(37, 147, 194, 255), stop:1 rgba(45, 196, 226, 255));\n"
-"color: rgb(255, 255, 255);\n"
-"font: 8pt \"Century Gothic\";\n"
-"min-width: 80px;\n"
-"border-style: solid;\n"
-"border-width: 1px;\n"
-"border-radius: 10px;\n"
-"border-color: rgb(38, 156, 200);\n"
-"padding: 5px;}\n"
-"\n"
-"QPushButton::flat\n"
-"{\n"
-"background-color: transparent;\n"
-"border: none;\n"
-"color: #fff;}\n"
-"\n"
-"QPushButton::disabled\n"
-"{\n"
-"background-color: rgb(131, 165, 174);\n"
-"color: black;\n"
-"border-color: black;}\n"
-"\n"
-"QPushButton::hover\n"
-"{\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgb"
-                        "a(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));\n"
-"border: 1px solid rgb(41, 170, 182);}\n"
-""));
-
-        horizontalLayout_2->addWidget(btnSearchMember);
-
         layoutWidget_9 = new QWidget(Members);
         layoutWidget_9->setObjectName(QString::fromUtf8("layoutWidget_9"));
         layoutWidget_9->setGeometry(QRect(460, 90, 351, 121));
@@ -833,6 +782,50 @@ public:
 
         gridLayout_6->addWidget(label_26, 2, 0, 1, 1);
 
+        txtSearchMember = new QLineEdit(Members);
+        txtSearchMember->setObjectName(QString::fromUtf8("txtSearchMember"));
+        txtSearchMember->setGeometry(QRect(600, 230, 241, 31));
+        btnSearchMember = new QPushButton(Members);
+        btnSearchMember->setObjectName(QString::fromUtf8("btnSearchMember"));
+        btnSearchMember->setGeometry(QRect(730, 270, 242, 26));
+        btnSearchMember->setStyleSheet(QString::fromUtf8("/*background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(54, 110, 140, 255), stop:0.747191 rgba(145, 192, 216, 255));\n"
+"\n"
+"border-color: rgb(81, 130, 157);\n"
+"font: 8pt \"Nirmala UI\";\n"
+"color: rgb(0, 0, 0);\n"
+"border-radius: 10px;*/\n"
+"\n"
+"/*-----QPushButton-----*/\n"
+"QPushButton\n"
+"{\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(37, 147, 194, 255), stop:1 rgba(45, 196, 226, 255));\n"
+"color: rgb(255, 255, 255);\n"
+"font: 8pt \"Century Gothic\";\n"
+"min-width: 80px;\n"
+"border-style: solid;\n"
+"border-width: 1px;\n"
+"border-radius: 10px;\n"
+"border-color: rgb(38, 156, 200);\n"
+"padding: 5px;}\n"
+"\n"
+"QPushButton::flat\n"
+"{\n"
+"background-color: transparent;\n"
+"border: none;\n"
+"color: #fff;}\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"background-color: rgb(131, 165, 174);\n"
+"color: black;\n"
+"border-color: black;}\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgb"
+                        "a(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));\n"
+"border: 1px solid rgb(41, 170, 182);}\n"
+""));
         tabWidget->addTab(Members, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName(QString::fromUtf8("tab_3"));
@@ -1067,10 +1060,6 @@ public:
         LibrarianHomeTitle_3->setText(QCoreApplication::translate("MainWindow", "the_M E M B E R S", nullptr));
         btnAddMember->setText(QCoreApplication::translate("MainWindow", "ADD A MEMBER", nullptr));
         btnEditMember->setText(QCoreApplication::translate("MainWindow", "UPDATE A MEMBER", nullptr));
-#if QT_CONFIG(accessibility)
-        txtSearchMember->setAccessibleName(QCoreApplication::translate("MainWindow", "Type here", nullptr));
-#endif // QT_CONFIG(accessibility)
-        btnSearchMember->setText(QCoreApplication::translate("MainWindow", "SEARCH", nullptr));
         lblMemberNumber->setText(QString());
         label_14->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
@@ -1086,6 +1075,7 @@ public:
         lblBookTitle_11->setText(QString());
         lblMemberBook1->setText(QString());
         label_26->setText(QCoreApplication::translate("MainWindow", "Book on Loan", nullptr));
+        btnSearchMember->setText(QCoreApplication::translate("MainWindow", "SEARCH", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Members), QCoreApplication::translate("MainWindow", "Maintain Members", nullptr));
 #if QT_CONFIG(whatsthis)
         tab_3->setWhatsThis(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#aa007f;\">HOME</span></p></body></html>", nullptr));

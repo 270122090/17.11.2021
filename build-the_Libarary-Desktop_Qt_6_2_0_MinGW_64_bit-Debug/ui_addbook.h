@@ -32,8 +32,8 @@ public:
     QLineEdit *txtadddewey;
     QLineEdit *txtaddid;
     QLabel *bookCopyLabel;
+    QComboBox *bookStatus;
     QPushButton *btnloadbookimage;
-    QFrame *frame;
     QLabel *addbookimagebox;
     QFrame *ImageFrame;
     QToolButton *tabletButton;
@@ -197,6 +197,12 @@ public:
         bookCopyLabel->setFont(font);
         bookCopyLabel->setStyleSheet(QString::fromUtf8("color: rgb(175, 175, 184);\n"
 "font: 12pt \"Century Gothic\";"));
+        bookStatus = new QComboBox(AddBookFormFrame);
+        bookStatus->setObjectName(QString::fromUtf8("bookStatus"));
+        bookStatus->setGeometry(QRect(240, 190, 151, 22));
+        bookStatus->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);\n"
+"border-radius: 15px;\n"
+""));
         btnloadbookimage = new QPushButton(addbook);
         btnloadbookimage->setObjectName(QString::fromUtf8("btnloadbookimage"));
         btnloadbookimage->setGeometry(QRect(534, 56, 141, 31));
@@ -229,14 +235,6 @@ public:
 "{\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));\n"
 "border: 1px solid rgb(41, 170, 182);}"));
-        frame = new QFrame(addbook);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(280, 239, 181, 31));
-        frame->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);\n"
-"border-radius: 15px;\n"
-""));
-        frame->setFrameShape(QFrame::StyledPanel);
-        frame->setFrameShadow(QFrame::Raised);
         addbookimagebox = new QLabel(addbook);
         addbookimagebox->setObjectName(QString::fromUtf8("addbookimagebox"));
         addbookimagebox->setGeometry(QRect(540, 116, 131, 191));

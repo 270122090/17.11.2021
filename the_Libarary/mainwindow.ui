@@ -18,7 +18,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>10</y>
+      <y>-10</y>
       <width>1001</width>
       <height>611</height>
      </rect>
@@ -932,68 +932,6 @@ color: black;</string>
          </property>
         </widget>
        </item>
-       <item>
-        <widget class="QLineEdit" name="txtSearchMember">
-         <property name="accessibleName">
-          <string>Type here</string>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">border: bold</string>
-         </property>
-         <property name="frame">
-          <bool>false</bool>
-         </property>
-         <property name="clearButtonEnabled">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnSearchMember">
-         <property name="styleSheet">
-          <string notr="true">/*background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(54, 110, 140, 255), stop:0.747191 rgba(145, 192, 216, 255));
-
-border-color: rgb(81, 130, 157);
-font: 8pt &quot;Nirmala UI&quot;;
-color: rgb(0, 0, 0);
-border-radius: 10px;*/
-
-/*-----QPushButton-----*/
-QPushButton
-{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(37, 147, 194, 255), stop:1 rgba(45, 196, 226, 255));
-color: rgb(255, 255, 255);
-font: 8pt &quot;Century Gothic&quot;;
-min-width: 80px;
-border-style: solid;
-border-width: 1px;
-border-radius: 10px;
-border-color: rgb(38, 156, 200);
-padding: 5px;}
-
-QPushButton::flat
-{
-background-color: transparent;
-border: none;
-color: #fff;}
-
-QPushButton::disabled
-{
-background-color: rgb(131, 165, 174);
-color: black;
-border-color: black;}
-
-QPushButton::hover
-{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));
-border: 1px solid rgb(41, 170, 182);}
-</string>
-         </property>
-         <property name="text">
-          <string>SEARCH</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="layoutWidget_9">
@@ -1214,6 +1152,68 @@ border: 1px solid rgb(41, 170, 182);}
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QLineEdit" name="txtSearchMember">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>230</y>
+        <width>241</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSearchMember">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>270</y>
+        <width>242</width>
+        <height>26</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(54, 110, 140, 255), stop:0.747191 rgba(145, 192, 216, 255));
+
+border-color: rgb(81, 130, 157);
+font: 8pt &quot;Nirmala UI&quot;;
+color: rgb(0, 0, 0);
+border-radius: 10px;*/
+
+/*-----QPushButton-----*/
+QPushButton
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(37, 147, 194, 255), stop:1 rgba(45, 196, 226, 255));
+color: rgb(255, 255, 255);
+font: 8pt &quot;Century Gothic&quot;;
+min-width: 80px;
+border-style: solid;
+border-width: 1px;
+border-radius: 10px;
+border-color: rgb(38, 156, 200);
+padding: 5px;}
+
+QPushButton::flat
+{
+background-color: transparent;
+border: none;
+color: #fff;}
+
+QPushButton::disabled
+{
+background-color: rgb(131, 165, 174);
+color: black;
+border-color: black;}
+
+QPushButton::hover
+{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));
+border: 1px solid rgb(41, 170, 182);}
+</string>
+      </property>
+      <property name="text">
+       <string>SEARCH</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">

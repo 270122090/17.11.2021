@@ -26,7 +26,6 @@ updatemember::~updatemember()
 
 void updatemember::update_a_member()
 {
-    QString filename;
 
     QString newname = ui->lbluMemberName->text();
     QString newnumber = ui->lbluMemberNumber->text();
