@@ -9,6 +9,7 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    addmember.cpp \
     allbooks.cpp \
     allmembers.cpp \
     login.cpp \
@@ -16,12 +17,14 @@ SOURCES += \
     mainwindow.cpp
 
 HEADERS += \
+    addmember.h \
     allbooks.h \
     allmembers.h \
     login.h \
     mainwindow.h
 
 FORMS += \
+    addmember.ui \
     login.ui \
     mainwindow.ui
 

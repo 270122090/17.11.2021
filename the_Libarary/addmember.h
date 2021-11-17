@@ -1,29 +1,26 @@
 #ifndef ADDMEMBER_H
 #define ADDMEMBER_H
 
+#include <QDialog>
 
 #include "allmembers.h"
 
-#include <QDialog>
-
 namespace Ui {
-class addMember;
+class addmember;
 }
 
-class addMember : public QDialog
+class addmember : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit addMember(AllMembers*& newMember, QWidget *parent = nullptr);
-    ~addMember();
-
-    void save_a_member(); // NH moved from private to public
+    explicit addmember(AllMembers*& newMember, QWidget *parent = nullptr);
+    ~addmember();
 
 private:
-    Ui::addMember *ui;
-    AllMembers** newMember;
+    Ui::addmember *ui;
 
+    AllMembers** newmembers;
 };
 
 #endif // ADDMEMBER_H
