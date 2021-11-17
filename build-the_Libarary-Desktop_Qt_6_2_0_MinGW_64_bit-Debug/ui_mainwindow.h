@@ -10,6 +10,7 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
@@ -19,6 +20,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -30,6 +32,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *LoadMembersList;
     QWidget *centralwidget;
     QTabWidget *tabWidget;
     QWidget *IssueBook;
@@ -117,11 +120,11 @@ public:
     QPushButton *btnSearchMember;
     QWidget *layoutWidget_9;
     QGridLayout *gridLayout_5;
-    QLabel *lblBookTitle_4;
+    QLabel *lblMemberNumber;
     QLabel *label_14;
     QLabel *label_10;
-    QLabel *lblBookTitle_3;
-    QLabel *lblBookTitle_5;
+    QLabel *lblMemberName;
+    QLabel *lblMemberEmail;
     QLabel *label_9;
     QWidget *layoutWidget_10;
     QGridLayout *gridLayout_6;
@@ -129,10 +132,10 @@ public:
     QLabel *label_15;
     QLabel *lblBookTitle_10;
     QLabel *lblBookTitle_9;
-    QLabel *lblBookTitle_7;
-    QLabel *lblBookTitle_8;
+    QLabel *lblMemberBook2;
+    QLabel *lblMemberBook3;
     QLabel *lblBookTitle_11;
-    QLabel *lblBookTitle_6;
+    QLabel *lblMemberBook1;
     QLabel *label_26;
     QWidget *tab_3;
     QLabel *LibrarianAdminHeading_2;
@@ -164,6 +167,8 @@ public:
     QFrame *line_5;
     QFrame *line_6;
     QMenuBar *menubar;
+    QMenu *menuAdmin_Centre;
+    QMenu *menuAutoLoads;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -171,6 +176,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1031, 662);
+        LoadMembersList = new QAction(MainWindow);
+        LoadMembersList->setObjectName(QString::fromUtf8("LoadMembersList"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
@@ -721,12 +728,12 @@ public:
         gridLayout_5 = new QGridLayout(layoutWidget_9);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         gridLayout_5->setContentsMargins(0, 0, 0, 0);
-        lblBookTitle_4 = new QLabel(layoutWidget_9);
-        lblBookTitle_4->setObjectName(QString::fromUtf8("lblBookTitle_4"));
-        lblBookTitle_4->setFont(font);
-        lblBookTitle_4->setFrameShape(QFrame::Panel);
+        lblMemberNumber = new QLabel(layoutWidget_9);
+        lblMemberNumber->setObjectName(QString::fromUtf8("lblMemberNumber"));
+        lblMemberNumber->setFont(font);
+        lblMemberNumber->setFrameShape(QFrame::Panel);
 
-        gridLayout_5->addWidget(lblBookTitle_4, 1, 1, 1, 1);
+        gridLayout_5->addWidget(lblMemberNumber, 1, 1, 1, 1);
 
         label_14 = new QLabel(layoutWidget_9);
         label_14->setObjectName(QString::fromUtf8("label_14"));
@@ -740,19 +747,19 @@ public:
 
         gridLayout_5->addWidget(label_10, 0, 0, 1, 1);
 
-        lblBookTitle_3 = new QLabel(layoutWidget_9);
-        lblBookTitle_3->setObjectName(QString::fromUtf8("lblBookTitle_3"));
-        lblBookTitle_3->setFont(font);
-        lblBookTitle_3->setFrameShape(QFrame::Panel);
+        lblMemberName = new QLabel(layoutWidget_9);
+        lblMemberName->setObjectName(QString::fromUtf8("lblMemberName"));
+        lblMemberName->setFont(font);
+        lblMemberName->setFrameShape(QFrame::Panel);
 
-        gridLayout_5->addWidget(lblBookTitle_3, 0, 1, 1, 1);
+        gridLayout_5->addWidget(lblMemberName, 0, 1, 1, 1);
 
-        lblBookTitle_5 = new QLabel(layoutWidget_9);
-        lblBookTitle_5->setObjectName(QString::fromUtf8("lblBookTitle_5"));
-        lblBookTitle_5->setFont(font);
-        lblBookTitle_5->setFrameShape(QFrame::Panel);
+        lblMemberEmail = new QLabel(layoutWidget_9);
+        lblMemberEmail->setObjectName(QString::fromUtf8("lblMemberEmail"));
+        lblMemberEmail->setFont(font);
+        lblMemberEmail->setFrameShape(QFrame::Panel);
 
-        gridLayout_5->addWidget(lblBookTitle_5, 2, 1, 1, 1);
+        gridLayout_5->addWidget(lblMemberEmail, 2, 1, 1, 1);
 
         label_9 = new QLabel(layoutWidget_9);
         label_9->setObjectName(QString::fromUtf8("label_9"));
@@ -792,19 +799,19 @@ public:
 
         gridLayout_6->addWidget(lblBookTitle_9, 0, 2, 1, 1);
 
-        lblBookTitle_7 = new QLabel(layoutWidget_10);
-        lblBookTitle_7->setObjectName(QString::fromUtf8("lblBookTitle_7"));
-        lblBookTitle_7->setFont(font);
-        lblBookTitle_7->setFrameShape(QFrame::Panel);
+        lblMemberBook2 = new QLabel(layoutWidget_10);
+        lblMemberBook2->setObjectName(QString::fromUtf8("lblMemberBook2"));
+        lblMemberBook2->setFont(font);
+        lblMemberBook2->setFrameShape(QFrame::Panel);
 
-        gridLayout_6->addWidget(lblBookTitle_7, 1, 1, 1, 1);
+        gridLayout_6->addWidget(lblMemberBook2, 1, 1, 1, 1);
 
-        lblBookTitle_8 = new QLabel(layoutWidget_10);
-        lblBookTitle_8->setObjectName(QString::fromUtf8("lblBookTitle_8"));
-        lblBookTitle_8->setFont(font);
-        lblBookTitle_8->setFrameShape(QFrame::Panel);
+        lblMemberBook3 = new QLabel(layoutWidget_10);
+        lblMemberBook3->setObjectName(QString::fromUtf8("lblMemberBook3"));
+        lblMemberBook3->setFont(font);
+        lblMemberBook3->setFrameShape(QFrame::Panel);
 
-        gridLayout_6->addWidget(lblBookTitle_8, 2, 1, 1, 1);
+        gridLayout_6->addWidget(lblMemberBook3, 2, 1, 1, 1);
 
         lblBookTitle_11 = new QLabel(layoutWidget_10);
         lblBookTitle_11->setObjectName(QString::fromUtf8("lblBookTitle_11"));
@@ -813,12 +820,12 @@ public:
 
         gridLayout_6->addWidget(lblBookTitle_11, 2, 2, 1, 1);
 
-        lblBookTitle_6 = new QLabel(layoutWidget_10);
-        lblBookTitle_6->setObjectName(QString::fromUtf8("lblBookTitle_6"));
-        lblBookTitle_6->setFont(font);
-        lblBookTitle_6->setFrameShape(QFrame::Panel);
+        lblMemberBook1 = new QLabel(layoutWidget_10);
+        lblMemberBook1->setObjectName(QString::fromUtf8("lblMemberBook1"));
+        lblMemberBook1->setFont(font);
+        lblMemberBook1->setFrameShape(QFrame::Panel);
 
-        gridLayout_6->addWidget(lblBookTitle_6, 0, 1, 1, 1);
+        gridLayout_6->addWidget(lblMemberBook1, 0, 1, 1, 1);
 
         label_26 = new QLabel(layoutWidget_10);
         label_26->setObjectName(QString::fromUtf8("label_26"));
@@ -995,10 +1002,18 @@ public:
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
         menubar->setGeometry(QRect(0, 0, 1031, 21));
+        menuAdmin_Centre = new QMenu(menubar);
+        menuAdmin_Centre->setObjectName(QString::fromUtf8("menuAdmin_Centre"));
+        menuAutoLoads = new QMenu(menuAdmin_Centre);
+        menuAutoLoads->setObjectName(QString::fromUtf8("menuAutoLoads"));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
+
+        menubar->addAction(menuAdmin_Centre->menuAction());
+        menuAdmin_Centre->addAction(menuAutoLoads->menuAction());
+        menuAutoLoads->addAction(LoadMembersList);
 
         retranslateUi(MainWindow);
 
@@ -1011,6 +1026,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        LoadMembersList->setText(QCoreApplication::translate("MainWindow", "LoadMembersList", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "Book 1 ", nullptr));
         label_12->setText(QCoreApplication::translate("MainWindow", "Book 2", nullptr));
         label_13->setText(QCoreApplication::translate("MainWindow", "Book 3", nullptr));
@@ -1055,20 +1071,20 @@ public:
         txtSearchMember->setAccessibleName(QCoreApplication::translate("MainWindow", "Type here", nullptr));
 #endif // QT_CONFIG(accessibility)
         btnSearchMember->setText(QCoreApplication::translate("MainWindow", "SEARCH", nullptr));
-        lblBookTitle_4->setText(QString());
-        label_14->setText(QCoreApplication::translate("MainWindow", "Address", nullptr));
+        lblMemberNumber->setText(QString());
+        label_14->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
-        lblBookTitle_3->setText(QString());
-        lblBookTitle_5->setText(QString());
+        lblMemberName->setText(QString());
+        lblMemberEmail->setText(QString());
         label_9->setText(QCoreApplication::translate("MainWindow", "Number", nullptr));
         label_25->setText(QCoreApplication::translate("MainWindow", "Book on Loan", nullptr));
         label_15->setText(QCoreApplication::translate("MainWindow", "Book on Loan", nullptr));
         lblBookTitle_10->setText(QString());
         lblBookTitle_9->setText(QString());
-        lblBookTitle_7->setText(QString());
-        lblBookTitle_8->setText(QString());
+        lblMemberBook2->setText(QString());
+        lblMemberBook3->setText(QString());
         lblBookTitle_11->setText(QString());
-        lblBookTitle_6->setText(QString());
+        lblMemberBook1->setText(QString());
         label_26->setText(QCoreApplication::translate("MainWindow", "Book on Loan", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Members), QCoreApplication::translate("MainWindow", "Maintain Members", nullptr));
 #if QT_CONFIG(whatsthis)
@@ -1091,6 +1107,8 @@ public:
         label_32->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
         label_31->setText(QCoreApplication::translate("MainWindow", "ID :", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Reports", nullptr));
+        menuAdmin_Centre->setTitle(QCoreApplication::translate("MainWindow", "Admin Centre", nullptr));
+        menuAutoLoads->setTitle(QCoreApplication::translate("MainWindow", "AutoLoads", nullptr));
     } // retranslateUi
 
 };

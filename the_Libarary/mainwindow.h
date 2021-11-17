@@ -21,12 +21,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    //void add_a_member();
+
     void add_a_member();
-
-
-private slots:
-
+    void update_a_member();
+    void display_membersdetails();
+    void display_memberlist();
 
 private:
     Ui::MainWindow *ui;

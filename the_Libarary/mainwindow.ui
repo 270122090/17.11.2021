@@ -1007,7 +1007,7 @@ border: 1px solid rgb(41, 170, 182);}
       </property>
       <layout class="QGridLayout" name="gridLayout_5">
        <item row="1" column="1">
-        <widget class="QLabel" name="lblBookTitle_4">
+        <widget class="QLabel" name="lblMemberNumber">
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -1027,7 +1027,7 @@ border: 1px solid rgb(41, 170, 182);}
           <string notr="true">font: 75 9pt &quot;Yu Gothic UI&quot;;</string>
          </property>
          <property name="text">
-          <string>Address</string>
+          <string>Email</string>
          </property>
         </widget>
        </item>
@@ -1042,7 +1042,7 @@ border: 1px solid rgb(41, 170, 182);}
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="lblBookTitle_3">
+        <widget class="QLabel" name="lblMemberName">
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -1057,7 +1057,7 @@ border: 1px solid rgb(41, 170, 182);}
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLabel" name="lblBookTitle_5">
+        <widget class="QLabel" name="lblMemberEmail">
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -1144,7 +1144,7 @@ border: 1px solid rgb(41, 170, 182);}
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLabel" name="lblBookTitle_7">
+        <widget class="QLabel" name="lblMemberBook2">
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -1159,7 +1159,7 @@ border: 1px solid rgb(41, 170, 182);}
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLabel" name="lblBookTitle_8">
+        <widget class="QLabel" name="lblMemberBook3">
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -1189,7 +1189,7 @@ border: 1px solid rgb(41, 170, 182);}
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="lblBookTitle_6">
+        <widget class="QLabel" name="lblMemberBook1">
          <property name="font">
           <font>
            <pointsize>12</pointsize>
@@ -1660,8 +1660,26 @@ color: white;</string>
      <height>21</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuAdmin_Centre">
+    <property name="title">
+     <string>Admin Centre</string>
+    </property>
+    <widget class="QMenu" name="menuAutoLoads">
+     <property name="title">
+      <string>AutoLoads</string>
+     </property>
+     <addaction name="LoadMembersList"/>
+    </widget>
+    <addaction name="menuAutoLoads"/>
+   </widget>
+   <addaction name="menuAdmin_Centre"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="LoadMembersList">
+   <property name="text">
+    <string>LoadMembersList</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
