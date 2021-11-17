@@ -14,7 +14,7 @@ class updatemember : public QDialog
     Q_OBJECT
 
 public:
-    explicit updatemember(AllMembers*& updatethemember, QWidget *parent = nullptr);
+    explicit updatemember(AllMembers* updatethemember, QWidget *parent = nullptr);
     ~updatemember();
 
      void update_a_member();
@@ -23,7 +23,7 @@ public:
 
 private:
     Ui::updatemember *ui;
-    AllMembers** updatethemember;
+    AllMembers* updatethemember;
  };
 
 #endif // UPDATEMEMBER_H

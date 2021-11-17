@@ -3,12 +3,12 @@
 #include "allmembers.h"
 
 
-updatemember::updatemember(AllMembers*& updatethemember, QWidget *parent) :
+updatemember::updatemember(AllMembers* updatethemember, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::updatemember)
 {
     ui->setupUi(this);
-    this->updatethemember=&updatethemember;
+    this->updatethemember=updatethemember;
     if (updatethemember!= nullptr)
     {
         ui->lbluMemberName->setText(updatethemember->getMemberName());
@@ -26,14 +26,18 @@ updatemember::~updatemember()
 
 void updatemember::update_a_member()
 {
+    QString filename;
+
     QString newname = ui->lbluMemberName->text();
     QString newnumber = ui->lbluMemberNumber->text();
     QString newemail = ui->lbluMemberEmail->text();
-    QString book1="";
-    QString book2="";
-    QString book3="";
 
-    *updatethemember = new AllMembers(newname, newnumber, newemail,book1,book2,book3);
+    updatethemember->setMemberName(newname);
+    updatethemember->setPhoneNumber(newnumber);
+    updatethemember->setEmail(newemail);
+
+
+
     this->close();
 }
 

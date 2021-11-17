@@ -2,6 +2,7 @@
 
 #include "addmember.h"
 #include "ui_addmember.h"
+#include "mainwindow.h"
 
 addmember::addmember(AllMembers*& newmembers, QWidget *parent) :
     QDialog(parent),

@@ -673,7 +673,7 @@ public:
 
         txtSearchMember = new QLineEdit(layoutWidget_8);
         txtSearchMember->setObjectName(QString::fromUtf8("txtSearchMember"));
-        txtSearchMember->setStyleSheet(QString::fromUtf8("border: none;"));
+        txtSearchMember->setStyleSheet(QString::fromUtf8("border: bold"));
         txtSearchMember->setFrame(false);
         txtSearchMember->setClearButtonEnabled(true);
 
@@ -1017,7 +1017,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

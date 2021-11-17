@@ -21,11 +21,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+//*********** M E M B E R S ***********\\
 
     void add_a_member();
     void update_a_member();
+    void search_a_member();
     void display_membersdetails();
     void display_memberlist();
+
+//*********** B O O K S***********\\
+
+
 
 private:
     Ui::MainWindow *ui;

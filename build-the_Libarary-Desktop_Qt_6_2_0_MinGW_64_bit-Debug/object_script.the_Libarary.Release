@@ -1,3 +1,4 @@
+release/addbook.o
 release/addmember.o
 release/allbooks.o
 release/allmembers.o
@@ -5,6 +6,7 @@ release/login.o
 release/main.o
 release/mainwindow.o
 release/updatemember.o
+release/moc_addbook.o
 release/moc_addmember.o
 release/moc_login.o
 release/moc_mainwindow.o

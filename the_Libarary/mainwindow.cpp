@@ -34,7 +34,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(ui->btnAddMember, &QPushButton::clicked, this, &MainWindow::add_a_member);
     connect(ui->btnEditMember, &QPushButton::clicked, this, &MainWindow::update_a_member);
+    connect(ui->btnSearchBook, &QPushButton::clicked, this, &MainWindow::search_a_member);
     connect(ui->LoadMembersList,&QAction::triggered,this, &MainWindow::display_memberlist);
+    connect(ui->listMember, &QListWidget::itemClicked, this, &MainWindow::display_membersdetails);
 
     // ***************************************** B O O K S ********************************************* \\
 
@@ -160,4 +162,27 @@ void MainWindow::display_membersdetails()
         }
 }
 
+
+void MainWindow::search_a_member()
+{
+    QString search=ui->txtSearchMember->text();
+
+        if (search != "")
+        {
+            for (int i = 0; i < ui->listMember->count(); i++)
+            {
+                QListWidgetItem* user = ui->listMember->item(i);
+                user->setBackground(Qt::transparent);
+             }
+
+                QList<QListWidgetItem *> list = ui->listMember->findItems(search, Qt::MatchContains);
+
+                for(int i = 0; i < list.count(); ++i)
+                {
+                    QListWidgetItem * user = list.at(i);
+                    user->setBackground(Qt::cyan);
+                }
+
+        }
+}
 
