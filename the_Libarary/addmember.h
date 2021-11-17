@@ -14,8 +14,11 @@ class addmember : public QDialog
     Q_OBJECT
 
 public:
-    explicit addmember(AllMembers*& newMember, QWidget *parent = nullptr);
+    explicit addmember(AllMembers*& newmembers, QWidget *parent = nullptr);
     ~addmember();
+
+    void save_a_member();
+    void btn_exit_adding_member();
 
 private:
     Ui::addmember *ui;
