@@ -9,11 +9,12 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "allmembers.h"
 
 #include "addmember.h"
 #include "updatemember.h"
 
-//#include "addbook.h"
+#include "addbook.h"
 //#include "updatebook.h"
 
 
@@ -40,13 +41,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     // ***************************************** B O O K S ********************************************* \\
 
-
+    connect(ui->btnAddBook, &QPushButton::clicked,this, &MainWindow::add_a_Book);
+    /*connect(ui->btnSearchBook, &QPushButton::clicked, this, &MainWindow:: search_a_Book);
+    connect(ui->btnRemoveBook, &QPushButton::clicked, this, &MainWindow:: remove_a_Book);
+    connect(ui->btnUpdateBook, &QPushButton::clicked, this, &MainWindow:: update_a_Book);
+    connect(ui->LoadBookList, &QAction::triggered,this, &MainWindow::display_booklist);
+    connect(ui->listBooks, &QListWidget::itemClicked, this, &MainWindow::display_bookdetails);*/
 
 
     // ***************************************** I S U E  B O O K S ********************************************* \\
 
 
 }
+
 
 MainWindow::~MainWindow()
 {
@@ -70,6 +77,8 @@ void MainWindow::add_a_member()
             memberList.push_back(NewMember);
             ui->listMember->addItem("     " + NewMember->getMemberName()+"     |     " + NewMember->getPhoneNumber()); // space left delibrately
         }
+
+
 
         // writing data to file
         QFile memberFile("members.txt");
@@ -185,4 +194,40 @@ void MainWindow::search_a_member()
                 }
         }
 }
+
+// ***************************************** M E M B E R S ********************************************* \\
+
+void MainWindow::add_a_Book()
+{
+    AllBooks* newBook = nullptr;
+    addbook addabook(newBook, this);
+    addabook.setModal(true);
+    addabook.exec();
+
+    if (newBook != nullptr)
+    {
+        booklist.push_back(newBook);
+        ui->listBooks->addItem(newBook->gettitle()+"   " + newBook->getauthor());
+    }
+
+    QFile bookfile("librarybooks.txt");
+    bookfile.open(QIODevice::WriteOnly| QIODevice::Text);
+    QTextStream out(&bookfile);
+    for(int i=0;i<booklist.size();i++)
+    {
+        out << booklist.at(i)->gettitle()<<",";
+        out << booklist.at(i)->getauthor()<<",";
+        out << booklist.at(i)->getdewey()<<",";
+        out << booklist.at(i)->getstatus()<<",";
+        out << booklist.at(i)->getid()<<",";
+        out << booklist.at(i)->getimage()<<",",
+        out << booklist.at(i)->getdd()<< Qt::endl;
+
+    }
+        out.flush();
+        bookfile.close();
+
+}
+
+
 

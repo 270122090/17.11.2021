@@ -31,6 +31,7 @@ class Ui_MainWindow
 {
 public:
     QAction *LoadMembersList;
+    QAction *LoadBookList;
     QWidget *centralwidget;
     QTabWidget *tabWidget;
     QWidget *Home;
@@ -80,8 +81,8 @@ public:
     QLabel *addBookTtle_3;
     QFrame *frame_7;
     QListWidget *listBooks;
-    QLineEdit *txtSearchBook;
     QPushButton *btnSearchBook;
+    QLineEdit *lineEdit;
     QLabel *label_17;
     QLabel *lbl_ID;
     QLabel *lblBookTitle;
@@ -167,6 +168,8 @@ public:
         MainWindow->resize(1358, 863);
         LoadMembersList = new QAction(MainWindow);
         LoadMembersList->setObjectName(QString::fromUtf8("LoadMembersList"));
+        LoadBookList = new QAction(MainWindow);
+        LoadBookList->setObjectName(QString::fromUtf8("LoadBookList"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
@@ -758,30 +761,6 @@ public:
         listBooks->setObjectName(QString::fromUtf8("listBooks"));
         listBooks->setGeometry(QRect(30, 90, 431, 491));
         listBooks->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);"));
-        txtSearchBook = new QLineEdit(frame_7);
-        txtSearchBook->setObjectName(QString::fromUtf8("txtSearchBook"));
-        txtSearchBook->setGeometry(QRect(30, 30, 321, 31));
-        txtSearchBook->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
-"border: 2px solid rgb(96, 101, 124);\n"
-"border-radius: 15px;\n"
-"color: rgb(255, 255, 255);\n"
-"font: 12pt \"Century Gothic\";\n"
-"padding-left:20px;\n"
-"padding-rght: 20px;\n"
-"background-color: rgb(95, 95, 112);\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::hover{\n"
-"border: 2px solid rgb(43, 153, 213);\n"
-"}\n"
-"\n"
-"QLineEdit::focus{\n"
-"border: 2px solid rgb(170, 255, 255);\n"
-"background-color:rgb(43,45,56);\n"
-"}"));
-        txtSearchBook->setFrame(false);
-        txtSearchBook->setClearButtonEnabled(true);
         btnSearchBook = new QPushButton(frame_7);
         btnSearchBook->setObjectName(QString::fromUtf8("btnSearchBook"));
         btnSearchBook->setGeometry(QRect(360, 30, 101, 31));
@@ -825,6 +804,9 @@ public:
                         "a(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));\n"
 "border: 1px solid rgb(41, 170, 182);}\n"
 ""));
+        lineEdit = new QLineEdit(frame_7);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        lineEdit->setGeometry(QRect(60, 40, 281, 20));
         label_17 = new QLabel(Books);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(569, 316, 51, 36));
@@ -1553,10 +1535,11 @@ public:
         menubar->addAction(menuAdmin_Centre->menuAction());
         menuAdmin_Centre->addAction(menuautoLoads->menuAction());
         menuautoLoads->addAction(LoadMembersList);
+        menuautoLoads->addAction(LoadBookList);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1566,6 +1549,7 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         LoadMembersList->setText(QCoreApplication::translate("MainWindow", "LoadMembersList", nullptr));
+        LoadBookList->setText(QCoreApplication::translate("MainWindow", "LoadBookList", nullptr));
         btnIssueSearch->setText(QCoreApplication::translate("MainWindow", "SEARCH", nullptr));
 #if QT_CONFIG(accessibility)
         searchIssueBar->setAccessibleName(QCoreApplication::translate("MainWindow", "Type here", nullptr));
@@ -1604,9 +1588,6 @@ public:
         label_39->setText(QCoreApplication::translate("MainWindow", "ISSUE ANOTHER", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Home), QCoreApplication::translate("MainWindow", "Issue Book", nullptr));
         addBookTtle_3->setText(QCoreApplication::translate("MainWindow", "STOCK", nullptr));
-#if QT_CONFIG(accessibility)
-        txtSearchBook->setAccessibleName(QCoreApplication::translate("MainWindow", "Type here", nullptr));
-#endif // QT_CONFIG(accessibility)
         btnSearchBook->setText(QCoreApplication::translate("MainWindow", "SEARCH", nullptr));
         label_17->setText(QCoreApplication::translate("MainWindow", "Title", nullptr));
         lbl_ID->setText(QString());

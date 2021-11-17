@@ -250,18 +250,18 @@ font: 12pt &quot;Century Gothic&quot;;</string>
      <string>Book Status:</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="bookStatus">
+   <widget class="QComboBox" name="addstatus_2">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>160</x>
       <y>190</y>
-      <width>151</width>
+      <width>241</width>
       <height>22</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(95, 95, 112);
-border-radius: 15px;
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(95, 95, 112);
 </string>
     </property>
    </widget>
@@ -310,31 +310,11 @@ border: 1px solid rgb(41, 170, 182);}</string>
     <string>Upload Image</string>
    </property>
   </widget>
-  <widget class="QLabel" name="addbookimagebox">
-   <property name="geometry">
-    <rect>
-     <x>540</x>
-     <y>116</y>
-     <width>131</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(75, 75, 88);
-border:none;</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::Box</enum>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QFrame" name="ImageFrame">
    <property name="geometry">
     <rect>
      <x>520</x>
-     <y>96</y>
+     <y>100</y>
      <width>171</width>
      <height>251</height>
     </rect>
@@ -370,6 +350,42 @@ background-color: rgb(43, 153, 213);</string>
       <width>64</width>
       <height>64</height>
      </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblImage">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>90</y>
+      <width>241</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="addbookimagebox">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>131</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(75, 75, 88);
+border:none;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
@@ -432,7 +448,7 @@ border: 1px solid rgb(41, 170, 182);}</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(58, 58, 68);
+    <string notr="true">background-color: rgb(52, 52, 61);
 border-radius: 16px;</string>
    </property>
    <property name="frameShape">
@@ -462,6 +478,12 @@ font: 75 12pt &quot;Century Gothic&quot;;</string>
     </property>
    </widget>
   </widget>
+  <zorder>ImageFrame</zorder>
+  <zorder>addBookTabFrame</zorder>
+  <zorder>addstatus</zorder>
+  <zorder>AddBookFormFrame</zorder>
+  <zorder>btnloadbookimage</zorder>
+  <zorder>splitter</zorder>
  </widget>
  <resources/>
  <connections/>

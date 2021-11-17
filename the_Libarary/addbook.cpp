@@ -15,11 +15,11 @@ addbook::addbook(AllBooks*& newbook, QWidget *parent) :
     this->newbook = &newbook;
     this->bookpath = "none.png";
 
-    ui->addstatus->addItem("On Shelf");
-    ui->addstatus->addItem("On Loan");
-    ui->addstatus->addItem("Reserved");
-    ui->addstatus->addItem("Overdue");
-    ui->addstatus->addItem("Lost/Damaged");
+    ui->addstatus_2->addItem("On Shelf");
+    ui->addstatus_2->addItem("On Loan");
+    ui->addstatus_2->addItem("Reserved");
+    ui->addstatus_2->addItem("Overdue");
+    ui->addstatus_2->addItem("Lost/Damaged");
 
     connect (ui->btnsavebook, &QPushButton::clicked,this, &addbook::save_a_book);
     connect(ui->btnloadbookimage, &QPushButton::clicked, this, &addbook::loadbookimage);

@@ -32,11 +32,12 @@ public:
     QLineEdit *txtadddewey;
     QLineEdit *txtaddid;
     QLabel *bookCopyLabel;
-    QComboBox *bookStatus;
+    QComboBox *addstatus_2;
     QPushButton *btnloadbookimage;
-    QLabel *addbookimagebox;
     QFrame *ImageFrame;
     QToolButton *tabletButton;
+    QLabel *lblImage;
+    QLabel *addbookimagebox;
     QSplitter *splitter;
     QPushButton *btnsavebook;
     QFrame *addBookTabFrame;
@@ -197,11 +198,11 @@ public:
         bookCopyLabel->setFont(font);
         bookCopyLabel->setStyleSheet(QString::fromUtf8("color: rgb(175, 175, 184);\n"
 "font: 12pt \"Century Gothic\";"));
-        bookStatus = new QComboBox(AddBookFormFrame);
-        bookStatus->setObjectName(QString::fromUtf8("bookStatus"));
-        bookStatus->setGeometry(QRect(240, 190, 151, 22));
-        bookStatus->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);\n"
-"border-radius: 15px;\n"
+        addstatus_2 = new QComboBox(AddBookFormFrame);
+        addstatus_2->setObjectName(QString::fromUtf8("addstatus_2"));
+        addstatus_2->setGeometry(QRect(160, 190, 241, 22));
+        addstatus_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"background-color: rgb(95, 95, 112);\n"
 ""));
         btnloadbookimage = new QPushButton(addbook);
         btnloadbookimage->setObjectName(QString::fromUtf8("btnloadbookimage"));
@@ -235,15 +236,9 @@ public:
 "{\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));\n"
 "border: 1px solid rgb(41, 170, 182);}"));
-        addbookimagebox = new QLabel(addbook);
-        addbookimagebox->setObjectName(QString::fromUtf8("addbookimagebox"));
-        addbookimagebox->setGeometry(QRect(540, 116, 131, 191));
-        addbookimagebox->setStyleSheet(QString::fromUtf8("background-color: rgb(75, 75, 88);\n"
-"border:none;"));
-        addbookimagebox->setFrameShape(QFrame::Box);
         ImageFrame = new QFrame(addbook);
         ImageFrame->setObjectName(QString::fromUtf8("ImageFrame"));
-        ImageFrame->setGeometry(QRect(520, 96, 171, 251));
+        ImageFrame->setGeometry(QRect(520, 100, 171, 251));
         ImageFrame->setStyleSheet(QString::fromUtf8("background-color: rgb(52, 52, 61);\n"
 "border-radius: 16px;"));
         ImageFrame->setFrameShape(QFrame::StyledPanel);
@@ -254,6 +249,16 @@ public:
         tabletButton->setStyleSheet(QString::fromUtf8("border-radius:10px;\n"
 "background-color: rgb(43, 153, 213);"));
         tabletButton->setIconSize(QSize(64, 64));
+        lblImage = new QLabel(ImageFrame);
+        lblImage->setObjectName(QString::fromUtf8("lblImage"));
+        lblImage->setGeometry(QRect(130, 90, 241, 351));
+        lblImage->setFrameShape(QFrame::Box);
+        addbookimagebox = new QLabel(ImageFrame);
+        addbookimagebox->setObjectName(QString::fromUtf8("addbookimagebox"));
+        addbookimagebox->setGeometry(QRect(20, 20, 131, 191));
+        addbookimagebox->setStyleSheet(QString::fromUtf8("background-color: rgb(75, 75, 88);\n"
+"border:none;"));
+        addbookimagebox->setFrameShape(QFrame::Box);
         splitter = new QSplitter(addbook);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setGeometry(QRect(70, 366, 601, 31));
@@ -293,7 +298,7 @@ public:
         addBookTabFrame = new QFrame(addbook);
         addBookTabFrame->setObjectName(QString::fromUtf8("addBookTabFrame"));
         addBookTabFrame->setGeometry(QRect(60, 20, 191, 61));
-        addBookTabFrame->setStyleSheet(QString::fromUtf8("background-color: rgb(58, 58, 68);\n"
+        addBookTabFrame->setStyleSheet(QString::fromUtf8("background-color: rgb(52, 52, 61);\n"
 "border-radius: 16px;"));
         addBookTabFrame->setFrameShape(QFrame::StyledPanel);
         addBookTabFrame->setFrameShadow(QFrame::Raised);
@@ -303,6 +308,12 @@ public:
         addBookTtle->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
 "font: 75 12pt \"Century Gothic\";"));
         addBookTtle->setAlignment(Qt::AlignCenter);
+        ImageFrame->raise();
+        addBookTabFrame->raise();
+        addstatus->raise();
+        AddBookFormFrame->raise();
+        btnloadbookimage->raise();
+        splitter->raise();
 
         retranslateUi(addbook);
 
@@ -319,8 +330,9 @@ public:
         txtaddid->setPlaceholderText(QCoreApplication::translate("addbook", "Book ID", nullptr));
         bookCopyLabel->setText(QCoreApplication::translate("addbook", "Book Status:", nullptr));
         btnloadbookimage->setText(QCoreApplication::translate("addbook", "Upload Image", nullptr));
-        addbookimagebox->setText(QString());
         tabletButton->setText(QString());
+        lblImage->setText(QString());
+        addbookimagebox->setText(QString());
         btnsavebook->setText(QCoreApplication::translate("addbook", "Save", nullptr));
         addBookTtle->setText(QCoreApplication::translate("addbook", "ADD BOOK", nullptr));
     } // retranslateUi

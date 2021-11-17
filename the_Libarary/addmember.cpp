@@ -1,4 +1,5 @@
 #include <QMessageBox>
+#include <QVector>
 
 #include "addmember.h"
 #include "ui_addmember.h"
@@ -40,6 +41,7 @@ void addmember::save_a_member()
     if (memberPhone.trimmed() != "" && memberName.trimmed() != "")
     {
         *newmembers = new AllMembers(memberName, memberPhone, memberEmail,book1,book2,book3);
+
         ui->txtMemberName->clear();
         ui->txtMemberPhone->clear();
         ui->txtMemberEmail->clear();
@@ -51,4 +53,3 @@ void addmember::save_a_member()
         mb.exec();
     }
 }
-

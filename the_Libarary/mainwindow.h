@@ -19,6 +19,8 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
+    MainWindow(AllMembers* &ptrmembers, QWidget *parent = nullptr);
+    MainWindow(AllMembers* ptreditmember, QWidget *parent = nullptr);
     ~MainWindow();
 
 //*********** M E M B E R S ***********\\
@@ -28,16 +30,27 @@ public:
     void search_a_member();
     void display_membersdetails();
     void display_memberlist();
+    void edit_a_member();
 
 //*********** B O O K S***********\\
 
+    void add_a_Book();
+    void search_a_Book();
+    void remove_a_Book();
+    void update_a_Book();
+    void display_booklist();
+    void display_bookdetails();
 
 
 private:
     Ui::MainWindow *ui;
+    AllMembers** ptrmembers;
+    AllMembers*ptreditmember;
 
     QVector <AllBooks*> booklist;
     QVector <AllMembers*> memberList;
 
 };
 #endif // MAINWINDOW_H
+
+

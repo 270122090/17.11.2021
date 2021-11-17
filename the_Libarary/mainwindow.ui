@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Home">
      <attribute name="title">
@@ -1299,46 +1299,6 @@ border-radius: 16px;</string>
         <string notr="true">background-color: rgb(95, 95, 112);</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="txtSearchBook">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>30</y>
-         <width>321</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="accessibleName">
-        <string>Type here</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLineEdit{
-border: 2px solid rgb(96, 101, 124);
-border-radius: 15px;
-color: rgb(255, 255, 255);
-font: 12pt &quot;Century Gothic&quot;;
-padding-left:20px;
-padding-rght: 20px;
-background-color: rgb(95, 95, 112);
-}
-
-
-QLineEdit::hover{
-border: 2px solid rgb(43, 153, 213);
-}
-
-QLineEdit::focus{
-border: 2px solid rgb(170, 255, 255);
-background-color:rgb(43,45,56);
-}</string>
-       </property>
-       <property name="frame">
-        <bool>false</bool>
-       </property>
-       <property name="clearButtonEnabled">
-        <bool>true</bool>
-       </property>
-      </widget>
       <widget class="QPushButton" name="btnSearchBook">
        <property name="geometry">
         <rect>
@@ -1395,6 +1355,16 @@ border: 1px solid rgb(41, 170, 182);}
        </property>
        <property name="text">
         <string>SEARCH</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>40</y>
+         <width>281</width>
+         <height>20</height>
+        </rect>
        </property>
       </widget>
      </widget>
@@ -3252,6 +3222,7 @@ color: white;</string>
       <string>autoLoads</string>
      </property>
      <addaction name="LoadMembersList"/>
+     <addaction name="LoadBookList"/>
     </widget>
     <addaction name="menuautoLoads"/>
    </widget>
@@ -3261,6 +3232,11 @@ color: white;</string>
   <action name="LoadMembersList">
    <property name="text">
     <string>LoadMembersList</string>
+   </property>
+  </action>
+  <action name="LoadBookList">
+   <property name="text">
+    <string>LoadBookList</string>
    </property>
   </action>
  </widget>

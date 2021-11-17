@@ -22,7 +22,7 @@ public:
 
 private:
     Ui::addmember *ui;
-
+    QVector <AllMembers*> memberList;
     AllMembers** newmembers;
 };
 

@@ -6,7 +6,7 @@
 class AllMembers
 {
 public:
-   // AllMembers(QString Name, QString PhoneNumber, QString Email);
+
     AllMembers(QString Name, QString PhoneNumber, QString Email,QString one = "",QString two="",QString three="");
 
     void setMemberName(QString Name);
