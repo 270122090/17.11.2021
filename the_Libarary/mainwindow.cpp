@@ -15,7 +15,7 @@
 #include "updatemember.h"
 
 #include "addbook.h"
-//#include "updatebook.h"
+#include "updatebook.h"
 
 
 
@@ -51,6 +51,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnSearchBook, &QPushButton::clicked, this, &MainWindow:: search_a_Book);
     connect(ui->btnRemoveBook, &QPushButton::clicked, this, &MainWindow:: remove_a_Book);
     connect(ui->btnUpdateBook, &QPushButton::clicked, this, &MainWindow:: update_a_Book);
+    connect(ui->btnreturnBook, &QPushButton::clicked, this, &MainWindow:: return_a_Book);
     connect(ui->LoadBookList, &QAction::triggered,this, &MainWindow::display_booklist);
     connect(ui->listBooks, &QListWidget::itemClicked, this, &MainWindow::display_bookdetails);
 
@@ -104,7 +105,6 @@ void MainWindow::add_a_member()
             memberFile.close();
 
 }
-
 
 void MainWindow::update_a_member()
 {
@@ -251,29 +251,24 @@ void MainWindow::add_a_Book()
 
 void MainWindow::search_a_Book()
 {
-
     QString search=ui->txtSearchBook->text();
-    if (search != "")
-    {
-        for(int i = 0; i < ui->listBooks->count(); i++)
-        {
-            ui->listBooks->item(i)->setHidden(false);// found
 
-        }
-    }
-
-    else
-    {
-        for(int i = 0; i < ui->listBooks->count(); i++)
+        if (search != "")
         {
-            QList<QListWidgetItem *> list = ui->listBooks->findItems(search, Qt::MatchContains);
-            for(int i = 0; i < list.count(); ++i)
+            for (int i = 0; i < ui->listBooks->count(); i++)
             {
-            ui->listBooks->item(i)->setHidden(true); // not found
-            }
+                QListWidgetItem* user = ui->listBooks->item(i);
+                user->setBackground(Qt::transparent);
+             }
 
+                QList<QListWidgetItem *> list = ui->listBooks->findItems(search, Qt::MatchContains);
+
+             for(int i = 0; i < list.count(); ++i)
+                {
+                    QListWidgetItem * user = list.at(i);
+                    user->setBackground(Qt::cyan);
+                }
         }
-    }
 }
 
 void MainWindow::update_a_Book()
@@ -284,9 +279,8 @@ void MainWindow::update_a_Book()
             AllBooks* thebook=booklist.at(index);
             if (thebook !=nullptr)
                 {
-//                thebook up(thebook, nullptr);
-//                up.setModal(true);
-//                up.exec();
+                updatebook updatethebook(thebook, nullptr);
+                updatethebook.exec();
 
                     //update ui
 
@@ -308,9 +302,10 @@ void MainWindow::update_a_Book()
                 out << booklist.at(i)->gettitle()<<",";
                 out << booklist.at(i)->getauthor()<<",";
                 out << booklist.at(i)->getdewey()<<",";
+                out << booklist.at(i)->getstatus()<<",";
                 out << booklist.at(i)->getid()<<",";
                 out << booklist.at(i)->getdd()<<",";
-                out << booklist.at(i)->getimage();
+                out << booklist.at(i)->getimage()<<Qt::endl;
 
 
             }
@@ -345,6 +340,21 @@ void MainWindow::remove_a_Book()
     QPixmap pixmap("none.png");
     ui->lblImage->setPixmap(pixmap);
     ui->lblImage->setScaledContents(true);
+
+    QFile bookFile("books.txt");
+    bookFile.open(QIODevice::WriteOnly|QIODevice::Append | QIODevice::Text);
+    QTextStream out(&bookFile);
+    for(int i=0;i<booklist.size();i++)
+    {
+        out << booklist.at(i)->gettitle()<<",";
+        out << booklist.at(i)->getauthor()<<",";
+        out << booklist.at(i)->getdewey()<<",";
+        out << booklist.at(i)->getid()<<",";
+        out << booklist.at(i)->getdd()<<",";
+        out << booklist.at(i)->getimage();
+    }
+        out.flush();
+        bookFile.close();
 }
 
 // Once books are added books are dipslayed in listWidget and relevant data is displayed in relevant txt boxes
@@ -368,8 +378,7 @@ void MainWindow::display_bookdetails()
             QPixmap pixmap(currentBook->getimage());
             ui->lblImage->setPixmap(pixmap);
             ui->lblImage->setScaledContents(true);
-
-}
+        }
 }
 
 
@@ -377,7 +386,7 @@ void MainWindow::display_bookdetails()
  // Open books from librarybooks.txt
 void MainWindow::display_booklist()
 {
-    QFile inputFile("librarybooks.txt");
+    QFile inputFile("books.txt");
     inputFile.open(QIODevice::ReadOnly | QIODevice::Text);
 
     QTextStream in(&inputFile);
@@ -388,7 +397,7 @@ void MainWindow::display_booklist()
         QStringList bookinfo = line.split(",");
 
         //handle list of products ui
-        ui->listBooks->addItem("     "+bookinfo.at(0)+"     " +bookinfo.at(0)+"   " + bookinfo.at(1));
+        ui->listBooks->addItem("     "+bookinfo.at(4)+"     " +bookinfo.at(0)+"   " + bookinfo.at(1));
 
 
         AllBooks* bookproduct = new AllBooks(bookinfo.at(0), bookinfo.at(1),bookinfo.at(2), bookinfo.at(3), bookinfo.at(4), bookinfo.at(5), bookinfo.at(6));
@@ -397,4 +406,54 @@ void MainWindow::display_booklist()
     in.flush();
     inputFile.close();
 }
+
+
+void MainWindow::return_a_Book()
+{
+
+    int index =ui->listBooks->currentRow();
+        if (index >=0)
+        {
+            AllBooks* returnbook=booklist.at(index);
+            returnbook->setdd("");
+            returnbook->setstatus("On Shelf");
+
+            if (returnbook !=nullptr)
+                {
+                updatebook updatethebook(returnbook, nullptr);
+                updatethebook.exec();
+
+                    //update ui
+
+                    ui->lblBookTitle->setText(returnbook->gettitle());
+                    ui->lblAuthor->setText(returnbook->getauthor());
+                    ui->lblDewey->setText(returnbook->getdewey());
+                    ui->lblStatus->setText(returnbook->getstatus());
+                    ui->lbl_ID->setText(returnbook->getid());
+                    ui->lbldd->setText(returnbook->getdd());
+                    QPixmap pixmap(returnbook->getimage());
+                    ui->lblImage->setPixmap(pixmap);
+                    ui->lblImage->setScaledContents(true);
+                }
+            //file Update
+            QFile bookFile("books.txt");
+            bookFile.open(QIODevice::WriteOnly|QIODevice::Text);
+            QTextStream out(&bookFile);
+            for(int i=0;i<booklist.size();i++)
+            {
+                out << booklist.at(i)->gettitle()<<",";
+                out << booklist.at(i)->getauthor()<<",";
+                out << booklist.at(i)->getdewey()<<",";
+                out << booklist.at(i)->getstatus()<<",";
+                out << booklist.at(i)->getid()<<",";
+                out << booklist.at(i)->getdd()<<",";
+                out << booklist.at(i)->getimage()<<Qt::endl;
+
+
+            }
+                out.flush();
+                bookFile.close();
+        }
+}
+
 

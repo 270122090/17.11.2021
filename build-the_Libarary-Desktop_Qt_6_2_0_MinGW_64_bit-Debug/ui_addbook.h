@@ -32,7 +32,7 @@ public:
     QLineEdit *txtadddewey;
     QLineEdit *txtaddid;
     QLabel *bookCopyLabel;
-    QComboBox *addstatus_2;
+    QComboBox *addBookstatus;
     QPushButton *btnloadbookimage;
     QFrame *ImageFrame;
     QToolButton *tabletButton;
@@ -198,10 +198,10 @@ public:
         bookCopyLabel->setFont(font);
         bookCopyLabel->setStyleSheet(QString::fromUtf8("color: rgb(175, 175, 184);\n"
 "font: 12pt \"Century Gothic\";"));
-        addstatus_2 = new QComboBox(AddBookFormFrame);
-        addstatus_2->setObjectName(QString::fromUtf8("addstatus_2"));
-        addstatus_2->setGeometry(QRect(160, 190, 241, 22));
-        addstatus_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+        addBookstatus = new QComboBox(AddBookFormFrame);
+        addBookstatus->setObjectName(QString::fromUtf8("addBookstatus"));
+        addBookstatus->setGeometry(QRect(160, 190, 241, 22));
+        addBookstatus->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
 "background-color: rgb(95, 95, 112);\n"
 ""));
         btnloadbookimage = new QPushButton(addbook);
