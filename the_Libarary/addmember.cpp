@@ -46,7 +46,7 @@ void addmember::save_a_member()
     else
     {
         QMessageBox mb;
-        mb.setText("You must have a valid phone number and name");
+        mb.setText("You must have a valid name and phone number");
         mb.exec();
     }
 }

@@ -9,11 +9,15 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
+#include "addmember.h"
+#include "updatemember.h"
+
 //#include "addbook.h"
 //#include "updatebook.h"
 
 
-#include "addmember.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -87,7 +91,28 @@ void MainWindow::add_a_member()
 
 void MainWindow::update_a_member()
 {
+    int index =ui->listMember->currentRow();
+        if (index >=0)
+        {
+            AllMembers* themember=memberList.at(index);
+            if (themember !=nullptr)
+                {
+                updatemember updateamember(themember, nullptr);
+                updateamember.exec();
 
+                    //update ui
+
+                    ui->lblMemberName->setText(themember->getMemberName());
+                    ui->lblMemberNumber->setText(themember->getPhoneNumber());
+                    ui->lblMemberEmail->setText(themember->getEmail());
+                    ui->lblMemberBook1->setText(themember->getBook1());
+                    ui->lblMemberBook2->setText(themember->getBook1());
+                    ui->lblMemberBook3->setText(themember->getBook1());
+
+                }
+
+
+        }
 }
 
 void MainWindow::display_memberlist()
@@ -109,13 +134,14 @@ void MainWindow::display_memberlist()
         ui->listMember->addItem("     " +memberinfo.at(0)+"     |     "+memberinfo.at(1));
 
 
-        AllMembers* membersinfo = new AllMembers (memberinfo.at(0), memberinfo.at(1),memberinfo.at(2), memberinfo.at(3), memberinfo.at(4), memberinfo.at(5));
+       AllMembers* membersinfo = new AllMembers (memberinfo.at(0), memberinfo.at(1),memberinfo.at(2), memberinfo.at(3), memberinfo.at(4), memberinfo.at(5));
         memberList.push_back(membersinfo);
     }
     in.flush();
     inputFile.close();
 }
 
+// linking UI labels to vector to display data.
 void MainWindow::display_membersdetails()
 {
     int index = ui->listMember->currentRow();
@@ -133,3 +159,5 @@ void MainWindow::display_membersdetails()
 
         }
 }
+
+

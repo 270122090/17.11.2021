@@ -30,7 +30,6 @@ public:
 private:
     Ui::MainWindow *ui;
 
-
     QVector <AllBooks*> booklist;
     QVector <AllMembers*> memberList;
 

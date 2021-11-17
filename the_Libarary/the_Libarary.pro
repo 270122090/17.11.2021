@@ -14,19 +14,22 @@ SOURCES += \
     allmembers.cpp \
     login.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    updatemember.cpp
 
 HEADERS += \
     addmember.h \
     allbooks.h \
     allmembers.h \
     login.h \
-    mainwindow.h
+    mainwindow.h \
+    updatemember.h
 
 FORMS += \
     addmember.ui \
     login.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    updatemember.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
