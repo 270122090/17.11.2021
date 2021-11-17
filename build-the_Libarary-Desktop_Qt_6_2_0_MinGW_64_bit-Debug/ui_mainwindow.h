@@ -34,6 +34,7 @@ public:
     QAction *LoadBookList;
     QAction *LoadiBookList;
     QAction *LoadiMemberList;
+    QAction *LoadoBookList;
     QWidget *centralwidget;
     QTabWidget *tabWidget;
     QWidget *Home;
@@ -166,6 +167,8 @@ public:
         LoadiBookList->setObjectName(QString::fromUtf8("LoadiBookList"));
         LoadiMemberList = new QAction(MainWindow);
         LoadiMemberList->setObjectName(QString::fromUtf8("LoadiMemberList"));
+        LoadoBookList = new QAction(MainWindow);
+        LoadoBookList->setObjectName(QString::fromUtf8("LoadoBookList"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
@@ -1581,10 +1584,11 @@ public:
         menuautoLoads->addAction(LoadBookList);
         menuautoLoads->addAction(LoadiBookList);
         menuautoLoads->addAction(LoadiMemberList);
+        menuautoLoads->addAction(LoadoBookList);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1597,6 +1601,7 @@ public:
         LoadBookList->setText(QCoreApplication::translate("MainWindow", "LoadBookList", nullptr));
         LoadiBookList->setText(QCoreApplication::translate("MainWindow", "LoadiBookList", nullptr));
         LoadiMemberList->setText(QCoreApplication::translate("MainWindow", "LoadiMemberList", nullptr));
+        LoadoBookList->setText(QCoreApplication::translate("MainWindow", "LoadoBookList", nullptr));
         btnIssueSearch->setText(QCoreApplication::translate("MainWindow", "SEARCH", nullptr));
 #if QT_CONFIG(accessibility)
         searchIssueBar->setAccessibleName(QCoreApplication::translate("MainWindow", "Type here", nullptr));
