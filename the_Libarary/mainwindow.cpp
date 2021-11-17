@@ -1,5 +1,19 @@
+#include <QFile>
+#include <QTextStream>
+#include <QListWidgetItem>
+#include <QListWidget>
+#include <QDate>
+#include <QtCore>
+#include <QMessageBox>
+
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+//#include "addbook.h"
+//#include "updatebook.h"
+
+
+#include "addmember.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,5 +25,15 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+
+
 }
+
+
+
+
+
+
+
+
 
