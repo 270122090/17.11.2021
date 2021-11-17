@@ -23,7 +23,7 @@ public:
 
 private:
     Ui::addbook *ui;
-
+    QVector <AllBooks*> booklist;
     AllBooks** newbook;
     QString bookpath;
 };
