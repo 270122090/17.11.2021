@@ -20,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    connect(ui->btnAddMember, &QPushButton::clicked, this, &MainWindow::add_a_member);
 }
 
 MainWindow::~MainWindow()
@@ -30,10 +32,11 @@ MainWindow::~MainWindow()
 }
 
 
-
-
-
-
-
-
+void MainWindow::add_a_member()
+{
+        AllMembers* NewMember=nullptr;
+        addmember addmember(NewMember, nullptr);
+        addmember.setModal(true);
+        addmember.exec();
+}
 

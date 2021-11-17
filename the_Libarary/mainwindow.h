@@ -5,6 +5,8 @@
 #include <QVector>
 
 #include "allmembers.h"
+#include "allbooks.h"
+
 
 
 QT_BEGIN_NAMESPACE
@@ -20,7 +22,7 @@ public:
     ~MainWindow();
 
     //void add_a_member();
-    void on_btnAddMember_clicked();
+    void add_a_member();
 
 
 private slots:
@@ -30,7 +32,7 @@ private:
     Ui::MainWindow *ui;
 
 
-    //QVector <AllBooks*> booklist;
+    QVector <AllBooks*> booklist;
     QVector <AllMembers*> memberList;
 
 };
