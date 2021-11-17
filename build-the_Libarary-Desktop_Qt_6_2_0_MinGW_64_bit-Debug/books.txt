@@ -1,2 +1,1 @@
 1,1,1,On Shelf,1,,./images/Chronicles of Narnia.png
-1,1,1,Lost/Damaged,1,,./images/Chronicles of Narnia.png
