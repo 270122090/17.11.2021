@@ -38,5 +38,13 @@ void MainWindow::add_a_member()
         addmember addmember(NewMember, nullptr);
         addmember.setModal(true);
         addmember.exec();
+
+        // getting data from Vector and displaying in members screen
+        if (NewMember != nullptr)
+        {
+            memberList.push_back(NewMember);
+            ui->listMember->addItem("     " + NewMember->getMemberName()+"                                          " + NewMember->getPhoneNumber()); // space left delibrately
+        }
+
 }
 
