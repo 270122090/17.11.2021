@@ -32,6 +32,9 @@ class Ui_MainWindow
 public:
     QAction *LoadMembersList;
     QAction *LoadBookList;
+    QAction *LoadiBookList;
+    QAction *LoadiMemberList;
+    QAction *LoadoBookList;
     QWidget *centralwidget;
     QTabWidget *tabWidget;
     QWidget *Home;
@@ -139,23 +142,13 @@ public:
     QLabel *label_10;
     QWidget *Report;
     QListWidget *listoBooks;
-    QPushButton *btnReminder;
-    QLabel *LibraryHeading_3;
-    QLineEdit *txtSearchrBook;
-    QLabel *LibraryHeading_4;
-    QPushButton *btnrSearchBook;
-    QLabel *lbl_ID_2;
-    QLabel *lblStatus_2;
     QLabel *label_40;
-    QLabel *lblBookTitle_2;
     QLabel *label_41;
-    QLabel *lbldd_2;
-    QListWidget *listrBooks;
     QLabel *label_42;
     QLabel *label_46;
-    QLabel *lblAuthor_2;
     QLabel *label_47;
-    QPushButton *pushButton;
+    QPushButton *btnReminder;
+    QLabel *label_48;
     QMenuBar *menubar;
     QMenu *menuAdmin_Centre;
     QMenu *menuautoLoads;
@@ -165,11 +158,17 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1358, 863);
+        MainWindow->resize(1110, 863);
         LoadMembersList = new QAction(MainWindow);
         LoadMembersList->setObjectName(QString::fromUtf8("LoadMembersList"));
         LoadBookList = new QAction(MainWindow);
         LoadBookList->setObjectName(QString::fromUtf8("LoadBookList"));
+        LoadiBookList = new QAction(MainWindow);
+        LoadiBookList->setObjectName(QString::fromUtf8("LoadiBookList"));
+        LoadiMemberList = new QAction(MainWindow);
+        LoadiMemberList->setObjectName(QString::fromUtf8("LoadiMemberList"));
+        LoadoBookList = new QAction(MainWindow);
+        LoadoBookList->setObjectName(QString::fromUtf8("LoadoBookList"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tabWidget = new QTabWidget(centralwidget);
@@ -393,7 +392,9 @@ public:
         listiBooks = new QListWidget(frame_2);
         listiBooks->setObjectName(QString::fromUtf8("listiBooks"));
         listiBooks->setGeometry(QRect(40, 200, 441, 311));
-        listiBooks->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);"));
+        listiBooks->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);\n"
+"\n"
+"color: rgb(255, 255, 255);"));
         label_33 = new QLabel(frame_2);
         label_33->setObjectName(QString::fromUtf8("label_33"));
         label_33->setGeometry(QRect(60, 580, 151, 35));
@@ -468,6 +469,19 @@ public:
 "font: 15pt \"Century Gothic\";\n"
 "border-bottom: 1px solid rgb(193, 193, 193);\n"
 "border-radius:none;"));
+        btniSearchBook->raise();
+        txtiSearchBook->raise();
+        label_31->raise();
+        label_32->raise();
+        label_33->raise();
+        label_34->raise();
+        label_35->raise();
+        iBookTitle->raise();
+        iStatus->raise();
+        txtiDate->raise();
+        txtiDue->raise();
+        inewStatus->raise();
+        listiBooks->raise();
         frame_3 = new QFrame(Home);
         frame_3->setObjectName(QString::fromUtf8("frame_3"));
         frame_3->setGeometry(QRect(545, 35, 521, 711));
@@ -545,9 +559,14 @@ public:
         label_36 = new QLabel(frame_3);
         label_36->setObjectName(QString::fromUtf8("label_36"));
         label_36->setGeometry(QRect(61, 131, 111, 35));
-        label_36->setFont(font);
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Century Gothic")});
+        font2.setPointSize(8);
+        font2.setBold(false);
+        font2.setItalic(false);
+        label_36->setFont(font2);
         label_36->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"font: 75 12pt \"Century Gothic\";\n"
+"font: 75 8pt \"Century Gothic\";\n"
 "border-bottom: 1px solid rgb(193, 193, 193);\n"
 "border-radius: none;"));
         label_37 = new QLabel(frame_3);
@@ -561,7 +580,9 @@ public:
         listiMember = new QListWidget(frame_3);
         listiMember->setObjectName(QString::fromUtf8("listiMember"));
         listiMember->setGeometry(QRect(40, 200, 441, 311));
-        listiMember->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);"));
+        listiMember->setStyleSheet(QString::fromUtf8("background-color: rgb(95, 95, 112);\n"
+"\n"
+"color: rgb(255, 255, 255);"));
         txtiMemberName = new QLineEdit(frame_3);
         txtiMemberName->setObjectName(QString::fromUtf8("txtiMemberName"));
         txtiMemberName->setGeometry(QRect(163, 95, 281, 31));
@@ -670,6 +691,15 @@ public:
 "background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0.0995025 rgba(38, "
                         "208, 171, 255), stop:1 rgba(36, 222, 206, 255));\n"
 "border: 1px solid rgb(41, 170, 182);}"));
+        listiMember->raise();
+        btniSearchMember->raise();
+        txtiSearchMember->raise();
+        label_36->raise();
+        label_37->raise();
+        txtiMemberName->raise();
+        txtiMemberNumber->raise();
+        btnissuebook_2->raise();
+        btnissuedone->raise();
         addBookTtle_4 = new QLabel(Home);
         addBookTtle_4->setObjectName(QString::fromUtf8("addBookTtle_4"));
         addBookTtle_4->setGeometry(QRect(41, 15, 31, 21));
@@ -702,12 +732,12 @@ public:
         label_38 = new QLabel(Home);
         label_38->setObjectName(QString::fromUtf8("label_38"));
         label_38->setGeometry(QRect(655, 622, 121, 36));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Century Gothic")});
-        font2.setPointSize(10);
-        font2.setBold(false);
-        font2.setItalic(false);
-        label_38->setFont(font2);
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Century Gothic")});
+        font3.setPointSize(10);
+        font3.setBold(false);
+        font3.setItalic(false);
+        label_38->setFont(font3);
         label_38->setStyleSheet(QString::fromUtf8("color:white;\n"
 "font: 75 10pt \"Century Gothic\";"));
         label_38->setAlignment(Qt::AlignCenter);
@@ -719,7 +749,7 @@ public:
         label_39 = new QLabel(Home);
         label_39->setObjectName(QString::fromUtf8("label_39"));
         label_39->setGeometry(QRect(869, 620, 141, 36));
-        label_39->setFont(font2);
+        label_39->setFont(font3);
         label_39->setStyleSheet(QString::fromUtf8("color:white;\n"
 "font: 75 10pt \"Century Gothic\";"));
         label_39->setAlignment(Qt::AlignCenter);
@@ -837,12 +867,12 @@ public:
         lbl_ID = new QLabel(Books);
         lbl_ID->setObjectName(QString::fromUtf8("lbl_ID"));
         lbl_ID->setGeometry(QRect(695, 441, 241, 36));
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("Century Gothic")});
-        font3.setPointSize(15);
-        font3.setBold(false);
-        font3.setItalic(false);
-        lbl_ID->setFont(font3);
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Century Gothic")});
+        font4.setPointSize(15);
+        font4.setBold(false);
+        font4.setItalic(false);
+        lbl_ID->setFont(font4);
         lbl_ID->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -853,7 +883,7 @@ public:
         lblBookTitle = new QLabel(Books);
         lblBookTitle->setObjectName(QString::fromUtf8("lblBookTitle"));
         lblBookTitle->setGeometry(QRect(695, 313, 241, 36));
-        lblBookTitle->setFont(font3);
+        lblBookTitle->setFont(font4);
         lblBookTitle->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -864,7 +894,7 @@ public:
         lblDewey = new QLabel(Books);
         lblDewey->setObjectName(QString::fromUtf8("lblDewey"));
         lblDewey->setGeometry(QRect(695, 398, 241, 36));
-        lblDewey->setFont(font3);
+        lblDewey->setFont(font4);
         lblDewey->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -887,7 +917,7 @@ public:
         lblStatus = new QLabel(Books);
         lblStatus->setObjectName(QString::fromUtf8("lblStatus"));
         lblStatus->setGeometry(QRect(695, 484, 241, 35));
-        lblStatus->setFont(font3);
+        lblStatus->setFont(font4);
         lblStatus->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -910,7 +940,7 @@ public:
         lbldd = new QLabel(Books);
         lbldd->setObjectName(QString::fromUtf8("lbldd"));
         lbldd->setGeometry(QRect(694, 526, 241, 36));
-        lbldd->setFont(font3);
+        lbldd->setFont(font4);
         lbldd->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -927,7 +957,7 @@ public:
         lblAuthor = new QLabel(Books);
         lblAuthor->setObjectName(QString::fromUtf8("lblAuthor"));
         lblAuthor->setGeometry(QRect(695, 356, 241, 35));
-        lblAuthor->setFont(font3);
+        lblAuthor->setFont(font4);
         lblAuthor->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -1178,12 +1208,12 @@ public:
         label_22 = new QLabel(frame_5);
         label_22->setObjectName(QString::fromUtf8("label_22"));
         label_22->setGeometry(QRect(40, 100, 51, 21));
-        QFont font4;
-        font4.setFamilies({QString::fromUtf8("Nirmala UI")});
-        font4.setPointSize(10);
-        font4.setBold(false);
-        font4.setItalic(false);
-        label_22->setFont(font4);
+        QFont font5;
+        font5.setFamilies({QString::fromUtf8("Nirmala UI")});
+        font5.setPointSize(10);
+        font5.setBold(false);
+        font5.setItalic(false);
+        label_22->setFont(font5);
         label_22->setStyleSheet(QString::fromUtf8("font: 10pt \"Nirmala UI\";\n"
 "color: rgb(255, 255, 255);"));
         listMember = new QListWidget(frame_5);
@@ -1374,7 +1404,7 @@ public:
         lblMemberName = new QLabel(frame_6);
         lblMemberName->setObjectName(QString::fromUtf8("lblMemberName"));
         lblMemberName->setGeometry(QRect(150, 70, 271, 35));
-        lblMemberName->setFont(font3);
+        lblMemberName->setFont(font4);
         lblMemberName->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -1385,7 +1415,7 @@ public:
         lblMemberNumber = new QLabel(frame_6);
         lblMemberNumber->setObjectName(QString::fromUtf8("lblMemberNumber"));
         lblMemberNumber->setGeometry(QRect(150, 112, 271, 35));
-        lblMemberNumber->setFont(font3);
+        lblMemberNumber->setFont(font4);
         lblMemberNumber->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -1410,7 +1440,7 @@ public:
         lblMemberEmail = new QLabel(frame_6);
         lblMemberEmail->setObjectName(QString::fromUtf8("lblMemberEmail"));
         lblMemberEmail->setGeometry(QRect(150, 154, 271, 35));
-        lblMemberEmail->setFont(font3);
+        lblMemberEmail->setFont(font4);
         lblMemberEmail->setStyleSheet(QString::fromUtf8("background: transparent;\n"
 "border:none;\n"
 "color: rgb(193, 193, 193);\n"
@@ -1446,49 +1476,6 @@ public:
         listoBooks = new QListWidget(Report);
         listoBooks->setObjectName(QString::fromUtf8("listoBooks"));
         listoBooks->setGeometry(QRect(80, 120, 341, 421));
-        btnReminder = new QPushButton(Report);
-        btnReminder->setObjectName(QString::fromUtf8("btnReminder"));
-        btnReminder->setGeometry(QRect(300, 60, 121, 31));
-        btnReminder->setStyleSheet(QString::fromUtf8("background: rgba(40, 83, 107, 1);\n"
-"font: 75 9pt \"Yu Gothic UI\";\n"
-"color: white;"));
-        LibraryHeading_3 = new QLabel(Report);
-        LibraryHeading_3->setObjectName(QString::fromUtf8("LibraryHeading_3"));
-        LibraryHeading_3->setGeometry(QRect(80, 60, 139, 30));
-        LibraryHeading_3->setMaximumSize(QSize(16777215, 30));
-        LibraryHeading_3->setStyleSheet(QString::fromUtf8("background: rgba(40, 83, 107, 1);\n"
-"font: 75 9pt \"Yu Gothic UI\";\n"
-"color: white;"));
-        LibraryHeading_3->setAlignment(Qt::AlignCenter);
-        txtSearchrBook = new QLineEdit(Report);
-        txtSearchrBook->setObjectName(QString::fromUtf8("txtSearchrBook"));
-        txtSearchrBook->setGeometry(QRect(730, 110, 211, 33));
-        LibraryHeading_4 = new QLabel(Report);
-        LibraryHeading_4->setObjectName(QString::fromUtf8("LibraryHeading_4"));
-        LibraryHeading_4->setGeometry(QRect(730, 70, 139, 30));
-        LibraryHeading_4->setMaximumSize(QSize(16777215, 30));
-        LibraryHeading_4->setStyleSheet(QString::fromUtf8("background: rgba(40, 83, 107, 1);\n"
-"font: 75 9pt \"Yu Gothic UI\";\n"
-"color: white;"));
-        LibraryHeading_4->setAlignment(Qt::AlignCenter);
-        btnrSearchBook = new QPushButton(Report);
-        btnrSearchBook->setObjectName(QString::fromUtf8("btnrSearchBook"));
-        btnrSearchBook->setGeometry(QRect(960, 110, 161, 24));
-        btnrSearchBook->setStyleSheet(QString::fromUtf8("background: rgba(40, 83, 107, 1);\n"
-"font: 75 9pt \"Yu Gothic UI\";\n"
-"color: white;"));
-        lbl_ID_2 = new QLabel(Report);
-        lbl_ID_2->setObjectName(QString::fromUtf8("lbl_ID_2"));
-        lbl_ID_2->setGeometry(QRect(920, 377, 201, 35));
-        QFont font5;
-        font5.setPointSize(12);
-        lbl_ID_2->setFont(font5);
-        lbl_ID_2->setFrameShape(QFrame::Panel);
-        lblStatus_2 = new QLabel(Report);
-        lblStatus_2->setObjectName(QString::fromUtf8("lblStatus_2"));
-        lblStatus_2->setGeometry(QRect(920, 419, 201, 34));
-        lblStatus_2->setFont(font5);
-        lblStatus_2->setFrameShape(QFrame::Panel);
         label_40 = new QLabel(Report);
         label_40->setObjectName(QString::fromUtf8("label_40"));
         label_40->setGeometry(QRect(747, 295, 166, 34));
@@ -1499,51 +1486,89 @@ public:
         font6.setItalic(false);
         label_40->setFont(font6);
         label_40->setStyleSheet(QString::fromUtf8("font: 11pt \"Yu Gothic UI\";"));
-        lblBookTitle_2 = new QLabel(Report);
-        lblBookTitle_2->setObjectName(QString::fromUtf8("lblBookTitle_2"));
-        lblBookTitle_2->setGeometry(QRect(920, 295, 201, 34));
-        lblBookTitle_2->setFont(font5);
-        lblBookTitle_2->setFrameShape(QFrame::Panel);
         label_41 = new QLabel(Report);
         label_41->setObjectName(QString::fromUtf8("label_41"));
         label_41->setGeometry(QRect(747, 377, 166, 35));
-        label_41->setFont(font5);
-        lbldd_2 = new QLabel(Report);
-        lbldd_2->setObjectName(QString::fromUtf8("lbldd_2"));
-        lbldd_2->setGeometry(QRect(920, 460, 201, 34));
-        lbldd_2->setFont(font5);
-        lbldd_2->setFrameShape(QFrame::Panel);
-        listrBooks = new QListWidget(Report);
-        listrBooks->setObjectName(QString::fromUtf8("listrBooks"));
-        listrBooks->setGeometry(QRect(730, 150, 391, 91));
+        QFont font7;
+        font7.setPointSize(12);
+        label_41->setFont(font7);
         label_42 = new QLabel(Report);
         label_42->setObjectName(QString::fromUtf8("label_42"));
         label_42->setGeometry(QRect(747, 419, 166, 34));
-        label_42->setFont(font5);
+        label_42->setFont(font7);
         label_46 = new QLabel(Report);
         label_46->setObjectName(QString::fromUtf8("label_46"));
         label_46->setGeometry(QRect(747, 460, 166, 34));
-        label_46->setFont(font5);
-        lblAuthor_2 = new QLabel(Report);
-        lblAuthor_2->setObjectName(QString::fromUtf8("lblAuthor_2"));
-        lblAuthor_2->setGeometry(QRect(920, 336, 201, 34));
-        lblAuthor_2->setFont(font5);
-        lblAuthor_2->setFrameShape(QFrame::Panel);
+        label_46->setFont(font7);
         label_47 = new QLabel(Report);
         label_47->setObjectName(QString::fromUtf8("label_47"));
         label_47->setGeometry(QRect(747, 336, 166, 34));
-        label_47->setFont(font5);
-        pushButton = new QPushButton(Report);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(1000, 530, 141, 31));
-        pushButton->setStyleSheet(QString::fromUtf8("background: rgba(40, 83, 107, 1);\n"
+        label_47->setFont(font7);
+        btnReminder = new QPushButton(Report);
+        btnReminder->setObjectName(QString::fromUtf8("btnReminder"));
+        btnReminder->setGeometry(QRect(140, 10, 211, 91));
+        btnReminder->setCursor(QCursor(Qt::OpenHandCursor));
+        btnReminder->setMouseTracking(true);
+        btnReminder->setStyleSheet(QString::fromUtf8("/*background: rgba(40, 83, 107, 1);\n"
 "font: 75 9pt \"Yu Gothic UI\";\n"
-"color: white;"));
+"color: white;*/\n"
+"\n"
+"/*background-color: rgb(52, 52, 61);\n"
+"border-color: rgb(135, 83, 72);\n"
+"border-radius:14px;\n"
+"font: 8pt \"Nirmala UI\";\n"
+"color: black;*/\n"
+"\n"
+"/*-----QPushButton-----*/\n"
+"QPushButton\n"
+"{\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0.0995025 rgba(31, 168, 136, 255), stop:1 rgba(32, 197, 180, 255));\n"
+"color: rgb(255, 255, 255);\n"
+"font: 8pt \"Century Gothic\";\n"
+"min-width: 80px;\n"
+"border-style: solid;\n"
+"border-width: 1px;\n"
+"border-radius: 14px;\n"
+"border-color: rgb(38, 156, 200);\n"
+"padding: 5px;}\n"
+"\n"
+"QPushButton::flat\n"
+"{\n"
+"background-color: transparent;\n"
+"border: none;\n"
+"color: #fff;}\n"
+"\n"
+"QPushButton::disabled\n"
+"{\n"
+"background-color: rgb(131, 165, 174);\n"
+"color: black;\n"
+"border-color: black;}\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0.0995025 rgba(38, "
+                        "208, 171, 255), stop:1 rgba(36, 222, 206, 255));\n"
+"border: 1px solid rgb(41, 170, 182);}"));
+        label_48 = new QLabel(Report);
+        label_48->setObjectName(QString::fromUtf8("label_48"));
+        label_48->setGeometry(QRect(180, 140, 181, 36));
+        label_48->setFont(font);
+        label_48->setStyleSheet(QString::fromUtf8("color:white;\n"
+"font: 75 12pt \"Century Gothic\";"));
+        label_48->setAlignment(Qt::AlignCenter);
         tabWidget->addTab(Report, QString());
+        btnReminder->raise();
+        listoBooks->raise();
+        label_40->raise();
+        label_41->raise();
+        label_42->raise();
+        label_46->raise();
+        label_47->raise();
+        label_48->raise();
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1358, 21));
+        menubar->setGeometry(QRect(0, 0, 1110, 21));
         menuAdmin_Centre = new QMenu(menubar);
         menuAdmin_Centre->setObjectName(QString::fromUtf8("menuAdmin_Centre"));
         menuautoLoads = new QMenu(menuAdmin_Centre);
@@ -1557,10 +1582,13 @@ public:
         menuAdmin_Centre->addAction(menuautoLoads->menuAction());
         menuautoLoads->addAction(LoadMembersList);
         menuautoLoads->addAction(LoadBookList);
+        menuautoLoads->addAction(LoadiBookList);
+        menuautoLoads->addAction(LoadiMemberList);
+        menuautoLoads->addAction(LoadoBookList);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1571,6 +1599,9 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         LoadMembersList->setText(QCoreApplication::translate("MainWindow", "LoadMembersList", nullptr));
         LoadBookList->setText(QCoreApplication::translate("MainWindow", "LoadBookList", nullptr));
+        LoadiBookList->setText(QCoreApplication::translate("MainWindow", "LoadiBookList", nullptr));
+        LoadiMemberList->setText(QCoreApplication::translate("MainWindow", "LoadiMemberList", nullptr));
+        LoadoBookList->setText(QCoreApplication::translate("MainWindow", "LoadoBookList", nullptr));
         btnIssueSearch->setText(QCoreApplication::translate("MainWindow", "SEARCH", nullptr));
 #if QT_CONFIG(accessibility)
         searchIssueBar->setAccessibleName(QCoreApplication::translate("MainWindow", "Type here", nullptr));
@@ -1595,7 +1626,7 @@ public:
         txtiSearchMember->setAccessibleName(QCoreApplication::translate("MainWindow", "Type here", nullptr));
 #endif // QT_CONFIG(accessibility)
         txtiSearchMember->setPlaceholderText(QCoreApplication::translate("MainWindow", "Member name here...", nullptr));
-        label_36->setText(QCoreApplication::translate("MainWindow", "Status", nullptr));
+        label_36->setText(QCoreApplication::translate("MainWindow", "Contact Number", nullptr));
         label_37->setText(QCoreApplication::translate("MainWindow", "Title", nullptr));
         btnissuebook_2->setText(QString());
         btnissuedone->setText(QString());
@@ -1659,21 +1690,13 @@ public:
         label_14->setText(QCoreApplication::translate("MainWindow", "Email", nullptr));
         label_10->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Members", nullptr));
-        btnReminder->setText(QCoreApplication::translate("MainWindow", "Issue Reminder", nullptr));
-        LibraryHeading_3->setText(QCoreApplication::translate("MainWindow", "overdue_B O O K S", nullptr));
-        LibraryHeading_4->setText(QCoreApplication::translate("MainWindow", "receive_B O O K S", nullptr));
-        btnrSearchBook->setText(QCoreApplication::translate("MainWindow", "SEARCH A BOOK", nullptr));
-        lbl_ID_2->setText(QString());
-        lblStatus_2->setText(QString());
         label_40->setText(QCoreApplication::translate("MainWindow", "Title:", nullptr));
-        lblBookTitle_2->setText(QString());
         label_41->setText(QCoreApplication::translate("MainWindow", "ID :", nullptr));
-        lbldd_2->setText(QString());
         label_42->setText(QCoreApplication::translate("MainWindow", "Status:", nullptr));
         label_46->setText(QCoreApplication::translate("MainWindow", "Due Date", nullptr));
-        lblAuthor_2->setText(QString());
         label_47->setText(QCoreApplication::translate("MainWindow", "Author:", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Receive Book_In", nullptr));
+        btnReminder->setText(QString());
+        label_48->setText(QCoreApplication::translate("MainWindow", "RETURN BOOK", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Report), QCoreApplication::translate("MainWindow", "Report", nullptr));
         menuAdmin_Centre->setTitle(QCoreApplication::translate("MainWindow", "Admin Centre", nullptr));
         menuautoLoads->setTitle(QCoreApplication::translate("MainWindow", "autoLoads", nullptr));

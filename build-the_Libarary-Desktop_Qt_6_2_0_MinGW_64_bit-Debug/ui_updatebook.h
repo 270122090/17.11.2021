@@ -15,7 +15,6 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -24,74 +23,41 @@ class Ui_updatebook
 {
 public:
     QFrame *UpdateBookFormFrame;
-    QLineEdit *txtaddbook;
-    QLabel *bookCopyLabel;
-    QComboBox *addstatus_2;
     QLabel *bookCopyLabel_2;
-    QComboBox *updateBook;
+    QComboBox *boxupdateBook;
     QPushButton *btnupdatebook;
+    QLabel *label_19;
+    QLabel *label_17;
+    QLabel *lbluStatus;
+    QLabel *lbluBookTitle;
 
     void setupUi(QDialog *updatebook)
     {
         if (updatebook->objectName().isEmpty())
             updatebook->setObjectName(QString::fromUtf8("updatebook"));
-        updatebook->resize(622, 727);
+        updatebook->resize(489, 323);
         UpdateBookFormFrame = new QFrame(updatebook);
         UpdateBookFormFrame->setObjectName(QString::fromUtf8("UpdateBookFormFrame"));
-        UpdateBookFormFrame->setGeometry(QRect(50, 10, 451, 291));
+        UpdateBookFormFrame->setGeometry(QRect(20, 10, 451, 291));
         UpdateBookFormFrame->setStyleSheet(QString::fromUtf8("background-color: rgb(52, 52, 61);\n"
 "border-radius: 16px;"));
         UpdateBookFormFrame->setFrameShape(QFrame::StyledPanel);
         UpdateBookFormFrame->setFrameShadow(QFrame::Raised);
-        txtaddbook = new QLineEdit(UpdateBookFormFrame);
-        txtaddbook->setObjectName(QString::fromUtf8("txtaddbook"));
-        txtaddbook->setGeometry(QRect(30, 40, 371, 31));
-        txtaddbook->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
-"border: 2px solid rgb(96, 101, 124);\n"
-"border-radius: 15px;\n"
-"color: rgb(255, 255, 255);\n"
-"font: 12pt \"Century Gothic\";\n"
-"padding-left:20px;\n"
-"padding-rght: 20px;\n"
-"background-color: rgb(95, 95, 112);\n"
-"}\n"
-"\n"
-"\n"
-"QLineEdit::hover{\n"
-"border: 2px solid rgb(43, 153, 213);\n"
-"}\n"
-"\n"
-"QLineEdit::focus{\n"
-"border: 2px solid rgb(170, 255, 255);\n"
-"background-color:rgb(43,45,56);\n"
-"}"));
-        bookCopyLabel = new QLabel(UpdateBookFormFrame);
-        bookCopyLabel->setObjectName(QString::fromUtf8("bookCopyLabel"));
-        bookCopyLabel->setGeometry(QRect(40, 90, 111, 21));
+        bookCopyLabel_2 = new QLabel(UpdateBookFormFrame);
+        bookCopyLabel_2->setObjectName(QString::fromUtf8("bookCopyLabel_2"));
+        bookCopyLabel_2->setGeometry(QRect(40, 160, 111, 21));
         QFont font;
         font.setFamilies({QString::fromUtf8("Century Gothic")});
         font.setPointSize(12);
         font.setBold(false);
         font.setItalic(false);
-        bookCopyLabel->setFont(font);
-        bookCopyLabel->setStyleSheet(QString::fromUtf8("color: rgb(175, 175, 184);\n"
-"font: 12pt \"Century Gothic\";"));
-        addstatus_2 = new QComboBox(UpdateBookFormFrame);
-        addstatus_2->setObjectName(QString::fromUtf8("addstatus_2"));
-        addstatus_2->setGeometry(QRect(160, 90, 241, 22));
-        addstatus_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
-"background-color: rgb(95, 95, 112);\n"
-""));
-        bookCopyLabel_2 = new QLabel(UpdateBookFormFrame);
-        bookCopyLabel_2->setObjectName(QString::fromUtf8("bookCopyLabel_2"));
-        bookCopyLabel_2->setGeometry(QRect(160, 140, 111, 21));
         bookCopyLabel_2->setFont(font);
         bookCopyLabel_2->setStyleSheet(QString::fromUtf8("color: rgb(175, 175, 184);\n"
 "font: 12pt \"Century Gothic\";"));
-        updateBook = new QComboBox(UpdateBookFormFrame);
-        updateBook->setObjectName(QString::fromUtf8("updateBook"));
-        updateBook->setGeometry(QRect(90, 200, 241, 22));
-        updateBook->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+        boxupdateBook = new QComboBox(UpdateBookFormFrame);
+        boxupdateBook->setObjectName(QString::fromUtf8("boxupdateBook"));
+        boxupdateBook->setGeometry(QRect(40, 200, 241, 22));
+        boxupdateBook->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
 "background-color: rgb(95, 95, 112);\n"
 ""));
         btnupdatebook = new QPushButton(UpdateBookFormFrame);
@@ -137,6 +103,50 @@ public:
                         "a(47, 160, 194, 255), stop:1 rgba(57, 209, 209, 255));\n"
 "border: 1px solid rgb(41, 170, 182);}\n"
 ""));
+        label_19 = new QLabel(UpdateBookFormFrame);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+        label_19->setGeometry(QRect(40, 90, 71, 35));
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Century Gothic")});
+        font1.setPointSize(12);
+        font1.setBold(false);
+        font1.setItalic(false);
+        label_19->setFont(font1);
+        label_19->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"font: 75 12pt \"Century Gothic\";"));
+        label_17 = new QLabel(UpdateBookFormFrame);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+        label_17->setGeometry(QRect(40, 40, 51, 36));
+        label_17->setFont(font1);
+        label_17->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);\n"
+"font: 75 12pt \"Century Gothic\";"));
+        lbluStatus = new QLabel(UpdateBookFormFrame);
+        lbluStatus->setObjectName(QString::fromUtf8("lbluStatus"));
+        lbluStatus->setGeometry(QRect(160, 80, 241, 35));
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Century Gothic")});
+        font2.setPointSize(15);
+        font2.setBold(false);
+        font2.setItalic(false);
+        lbluStatus->setFont(font2);
+        lbluStatus->setStyleSheet(QString::fromUtf8("background: transparent;\n"
+"border:none;\n"
+"color: rgb(193, 193, 193);\n"
+"font: 15pt \"Century Gothic\";\n"
+"border-bottom: 1px solid rgb(193, 193, 193);\n"
+"border-radius:none;"));
+        lbluStatus->setFrameShape(QFrame::Panel);
+        lbluBookTitle = new QLabel(UpdateBookFormFrame);
+        lbluBookTitle->setObjectName(QString::fromUtf8("lbluBookTitle"));
+        lbluBookTitle->setGeometry(QRect(159, 30, 241, 36));
+        lbluBookTitle->setFont(font2);
+        lbluBookTitle->setStyleSheet(QString::fromUtf8("background: transparent;\n"
+"border:none;\n"
+"color: rgb(193, 193, 193);\n"
+"font: 15pt \"Century Gothic\";\n"
+"border-bottom: 1px solid rgb(193, 193, 193);\n"
+"border-radius:none;"));
+        lbluBookTitle->setFrameShape(QFrame::Panel);
 
         retranslateUi(updatebook);
 
@@ -146,10 +156,12 @@ public:
     void retranslateUi(QDialog *updatebook)
     {
         updatebook->setWindowTitle(QCoreApplication::translate("updatebook", "Dialog", nullptr));
-        txtaddbook->setPlaceholderText(QCoreApplication::translate("updatebook", "Title", nullptr));
-        bookCopyLabel->setText(QCoreApplication::translate("updatebook", "Current Status", nullptr));
         bookCopyLabel_2->setText(QCoreApplication::translate("updatebook", "New Status", nullptr));
         btnupdatebook->setText(QCoreApplication::translate("updatebook", "Update", nullptr));
+        label_19->setText(QCoreApplication::translate("updatebook", "Status", nullptr));
+        label_17->setText(QCoreApplication::translate("updatebook", "Title", nullptr));
+        lbluStatus->setText(QString());
+        lbluBookTitle->setText(QString());
     } // retranslateUi
 
 };
